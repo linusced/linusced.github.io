@@ -1,0 +1,28 @@
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 20px 5%;
+    max-width: 1400px;
+}
+.text-content.small {
+    max-width: 700px;
+}
+
+h1, .h1 {
+    font-family: cursive;
+    font-size: 50px;
+    margin: 20px 5px;
+}
+h2, .h2 {
+    font-size: 25px;
+    margin: 15px 5px;
+}
+
+p, .p {
+    font-size: 20px;
+    line-height: 140%;
+    text-align: left;
+    margin: 10px 0;
+}
