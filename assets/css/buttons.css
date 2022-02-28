@@ -1,0 +1,12 @@
+a, button {
+    font-size: 1.2rem;
+}
+
+nav a {
+    padding: var(--border-size);
+    margin: 0 1rem;
+    text-decoration: none;
+}
+nav a div {
+    padding: .4rem 1.6rem;
+}
