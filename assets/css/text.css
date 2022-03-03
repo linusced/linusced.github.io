@@ -24,3 +24,7 @@ h3 {
 .text-right {
     text-align: right;
 }
+
+.overlay-text-color {
+    color: var(--color-blue-2);
+}

@@ -21,9 +21,7 @@ window.addEventListener("load", () => {
 
 window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(callResizeCallbacks, 300);
+    resizeTimeout = setTimeout(() => {
+        resizeCallbacks.forEach(callback => callback());
+    }, 50);
 });
-
-function callResizeCallbacks() {
-    resizeCallbacks.forEach(callback => callback());
-}

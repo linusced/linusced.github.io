@@ -3,8 +3,9 @@
     --color-black: #1d1d1d;
     --color-blue-1: #244b66;
     --color-blue-2: #b1d0e0;
+    --color-green: #24cf24;
     --gradient: linear-gradient(to right, #c52668 0%, #42b6eb 16.66%, #7c3fee 33.33%, #c52668 50%, #42b6eb 66.66%, #7c3fee 83.33%, #c52668 100%);
-    --border-width: .2rem;
+    --border-width: 0.2rem;
 }
 
 .colors-1 {
@@ -97,6 +98,33 @@ body {
 .margin-horizontal-3 {
     margin-left: 3rem;
     margin-right: 3rem;
+}
+
+.margin-top {
+    margin-top: 1rem;
+}
+.margin-bottom {
+    margin-bottom: 1rem;
+}
+
+.margin-left {
+    margin-left: 1rem;
+}
+.margin-right {
+    margin-right: 1rem;
+}
+
+.padding-top {
+    padding-top: .5rem;
+}
+.padding-bottom {
+    padding-bottom: .5rem;
+}
+.padding-left {
+    padding-left: .5rem;
+}
+.padding-right {
+    padding-right: .5rem;
 }
 
 .positive-z {

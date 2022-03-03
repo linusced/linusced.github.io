@@ -6,14 +6,26 @@ window.addEventListener("load", () => {
     headerResize();
 
     function headerResize() {
+        // Reset to desktop nav before getting bounding box
+        navElement.classList.add("row");
+        navElement.classList.remove("column");
+        navElement.classList.remove("full-width");
+        navElement.classList.remove("full-width-children");
+
         const headerBoundingBox = headerElement.getBoundingClientRect(),
             navBoundingBox = navElement.getBoundingClientRect();
 
         if (headerBoundingBox.width < navBoundingBox.width) {
-            // mobile nav
+            navElement.classList.remove("row");
+            navElement.classList.add("column");
+            navElement.classList.add("full-width");
+            navElement.classList.add("full-width-children");
         }
         else {
-            // default nav
+            navElement.classList.add("row");
+            navElement.classList.remove("column");
+            navElement.classList.remove("full-width");
+            navElement.classList.remove("full-width-children");
         }
     }
 });

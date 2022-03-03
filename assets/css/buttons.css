@@ -4,51 +4,68 @@ a, button {
     border: none;
     background: none;
     cursor: pointer;
+    text-decoration: none;
 }
 a:focus, button:focus {
     outline: .2rem solid var(--color-white);
     outline-offset: .2rem;
 }
 
-.button-no-text-dec {
-    text-decoration: none;
+.text-link {
+    font-size: 1rem;
+    text-decoration: underline;
 }
 
-.nav-button {
+.default-button {
     padding: var(--border-width);
-    margin: 0 1rem;
-    text-decoration: none;
 }
-.nav-button-text {
+
+.button-text {
     padding: .4rem 1.6rem;
+    white-space: nowrap;
 }
-.nav-button-text.icon {
+.button-text.icon {
     padding-left: 0;
 }
-.nav-button-text > i {
+.button-text > i {
     padding: 0 .6rem;
 }
 
-.nav-button .gradient {
+.default-button .gradient {
     visibility: hidden;
 }
-.nav-button:hover .gradient, .nav-button:focus .gradient, .nav-button.active .gradient {
+.default-button:hover .gradient, .default-button:focus .gradient, .default-button.active .gradient {
     visibility: visible;
 }
 
-.nav-button:focus:not(.active) {
+.default-button:focus:not(.active) {
     outline: none;
 }
 
-.nav-button.active:not(:hover):not(:focus) {
+.default-button.active:not(:hover):not(:focus) {
     padding: 0;
     border: var(--border-width) solid transparent;
 }
-.nav-button.active:focus {
+.default-button.active:focus {
     outline-offset: 0;
 }
 
-.nav-button.active .nav-button-text {
-    background: none;
+.default-button.active .button-text {
+    background: #0008;
     color: var(--color-blue-2);
+}
+
+.alternate-button {
+    padding: var(--border-width);
+    text-decoration: none;
+}
+.alternate-button:hover, .alternate-button:focus {
+    outline: none;
+    filter: invert(1) grayscale(1);
+}
+.alternate-button.active {
+    filter: none;
+}
+.alternate-button.active .button-text {
+    background: var(--color-green);
 }

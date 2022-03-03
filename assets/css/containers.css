@@ -4,8 +4,11 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
-.container.full-width {
+.container.full-width, .container.full-width-children > * {
     width: 100%;
+}
+.container.max-width {
+    max-width: 100%;
 }
 
 .container.center-content {
@@ -28,6 +31,19 @@
 
 .container.border-height {
     height: var(--border-width);
+}
+.container.border-width-margin {
+    margin: var(--border-width);
+}
+
+
+.semi-transparent-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0008;
 }
 
 .gradient-container {
