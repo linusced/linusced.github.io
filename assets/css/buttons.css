@@ -1,12 +1,54 @@
 a, button {
     font-size: 1.2rem;
+    color: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+a:focus, button:focus {
+    outline: .2rem solid var(--color-white);
+    outline-offset: .2rem;
 }
 
-nav a {
-    padding: var(--border-size);
+.button-no-text-dec {
+    text-decoration: none;
+}
+
+.nav-button {
+    padding: var(--border-width);
     margin: 0 1rem;
     text-decoration: none;
 }
-nav a div {
+.nav-button-text {
     padding: .4rem 1.6rem;
+}
+.nav-button-text.icon {
+    padding-left: 0;
+}
+.nav-button-text > i {
+    padding: 0 .6rem;
+}
+
+.nav-button .gradient {
+    visibility: hidden;
+}
+.nav-button:hover .gradient, .nav-button:focus .gradient, .nav-button.active .gradient {
+    visibility: visible;
+}
+
+.nav-button:focus:not(.active) {
+    outline: none;
+}
+
+.nav-button.active:not(:hover):not(:focus) {
+    padding: 0;
+    border: var(--border-width) solid transparent;
+}
+.nav-button.active:focus {
+    outline-offset: 0;
+}
+
+.nav-button.active .nav-button-text {
+    background: none;
+    color: var(--color-blue-2);
 }

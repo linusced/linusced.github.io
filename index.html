@@ -10,33 +10,56 @@
     <link rel="stylesheet" href="assets/fontawesome/css/solid.min.css">
     <link rel="stylesheet" href="assets/fontawesome/css/brands.min.css">
 
-    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/containers.css">
     <link rel="stylesheet" href="assets/css/buttons.css">
     <link rel="stylesheet" href="assets/css/text.css">
 
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/header.js"></script>
     <script src="assets/js/color-gradients.js"></script>
 
     <title>linusced</title>
 </head>
 
-<body class="colors-2">
+<body class="colors-1">
     <div class="container full-width">
-        <header class="container row space-content full-width padding-vertical-1 padding-horizontal-2 colors-1">
-            <nav class="container row center-content padding-horizontal-2">
-                <a href="#" data-background-gradient="hover">
-                    <div class="colors-2">Link 1</div>
+        <header class="container row-wrap space-content full-width padding-horizontal-2 colors-1 js-header">
+            <a href="#" class="button-no-text-dec margin-vertical-1">
+                <h3>linusced</h3>
+            </a>
+            <nav class="container row center-content positive-z js-primary-nav">
+                <a href="#" class="nav-button gradient-container js-gradient-container active">
+                    <span class="gradient negative-z js-gradient"></span>
+                    <div class="nav-button-text colors-2">Link 1</div>
                 </a>
-                <a href="#" data-background-gradient="hover">
-                    <div class="colors-2">Link 2</div>
+                <a href="#" class="nav-button gradient-container js-gradient-container">
+                    <span class="gradient negative-z js-gradient"></span>
+                    <div class="nav-button-text colors-2">Link 2</div>
                 </a>
-                <a href="#" data-background-gradient="hover">
-                    <div class="colors-2">Link 3</div>
+                <a href="#" class="nav-button gradient-container js-gradient-container">
+                    <span class="gradient negative-z js-gradient"></span>
+                    <div class="nav-button-text colors-2">Link 3</div>
                 </a>
-                <!-- <a href="http://github.com/linusced/" target="_blank" class="icon-link"><div class="colors-2"><i class="fab fa-github"></i>GitHub</div></a> -->
+                <a href="http://github.com/linusced/" target="_blank"
+                    class="nav-button gradient-container js-gradient-container">
+                    <span class="gradient negative-z js-gradient"></span>
+                    <div class="nav-button-text icon colors-2"><i class="fab fa-github"></i><span>GitHub</span>
+                    </div>
+                </a>
             </nav>
+            <div class="container row center-content margin-vertical-1 positive-z">
+                <p>Contact: linuscedergren@gmail.com</p>
+                <button class="nav-button gradient-container js-gradient-container js-copy"
+                    data-text="linuscedergren@gmail.com">
+                    <span class="gradient negative-z js-gradient"></span>
+                    <div class="nav-button-text colors-2">Copy</div>
+                </button>
+            </div>
         </header>
-        <div class="container full-width border-height" data-background-gradient="active"></div>
+        <div class="container full-width border-height gradient-container js-gradient-container">
+            <span class="gradient js-gradient"></span>
+        </div>
     </div>
 </body>
 
