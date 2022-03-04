@@ -69,3 +69,20 @@ a:focus, button:focus {
 .alternate-button.active .button-text {
     background: var(--color-green);
 }
+
+.icon-button {
+    font-size: 1.7rem;
+    position: relative;
+}
+.icon-button i {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s, visibility .5s;
+}
+.icon-button i:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

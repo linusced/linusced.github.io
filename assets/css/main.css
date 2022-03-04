@@ -35,6 +35,12 @@
     box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion) {
+    * {
+        transition: none !important;
+    }
+}
+
 html {
     height: 100%;
     font-size: 1.1rem;
@@ -132,4 +138,12 @@ body {
 }
 .negative-z {
     z-index: -1;
+}
+
+.hidden {
+    display: none !important;
+}
+.visibility-hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
