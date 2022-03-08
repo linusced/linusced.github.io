@@ -14,7 +14,6 @@ window.addEventListener("load", () => {
     resizeHeader();
 
     function resizeHeader() {
-        // Reset to desktop nav before getting boundingClientRect
         navElement.classList.add("row");
         navElement.classList.remove("column");
         navElement.classList.remove("full-width");
@@ -51,8 +50,6 @@ window.addEventListener("load", () => {
 
         const totalHeight = parentElement.getBoundingClientRect().height;
         parentHeightElement.style.height = totalHeight + "px";
-        parentElement.style.transition = "transform .3s linear";
-        parentElement.style.transform = window.scrollY > totalHeight ? "translateY(-100%)" : "translateY(0)";
     }
 
     toggleElement.addEventListener("click", () => {
@@ -115,20 +112,48 @@ window.addEventListener("load", () => {
         }, 310);
     }
 
-    var prevScrollY = window.scrollY;
-    window.addEventListener("scroll", () => {
+    var prevScrollY = window.scrollY, scrollUpStart = -1, scrollDownStart = -1;
+
+    scrollCallbacks.push(scrollHeader);
+
+    function scrollHeader() {
         const height = parentElement.getBoundingClientRect().height;
 
-        if (window.scrollY > height && window.scrollY < prevScrollY) {
-            parentElement.style.transform = "translateY(0)";
-            parentElement.style.top = "0";
-        } else if (window.scrollY > height && headerElement.getAttribute("data-mobile-status") != "1") {
-            parentElement.style.transform = "translateY(-100%)";
+        if (window.scrollY < prevScrollY) {
+            if (scrollUpStart == -1) {
+                let scrollUpStartOffset = 0;
+                if (scrollDownStart != -1 && window.scrollY - scrollDownStart < height)
+                    scrollUpStartOffset = height + (scrollDownStart - window.scrollY);
+
+                scrollUpStart = window.scrollY + scrollUpStartOffset;
+            }
+            scrollDownStart = -1;
+
+            if (headerElement.getAttribute("data-mobile-status") != "1") {
+                if (scrollUpStart - window.scrollY < height)
+                    parentElement.style.top = -height + (scrollUpStart - window.scrollY) + "px";
+                else
+                    parentElement.style.top = "0";
+            }
         }
-        else if (window.scrollY > prevScrollY && headerElement.getAttribute("data-mobile-status") != "1") {
-            parentElement.style.top = -window.scrollY + "px";
+        else {
+            if (scrollDownStart == -1) {
+                let scrollDownStartOffset = 0;
+                if (scrollUpStart != -1 && scrollUpStart - window.scrollY < height)
+                    scrollDownStartOffset = -height + (scrollUpStart - window.scrollY);
+
+                scrollDownStart = window.scrollY + scrollDownStartOffset;
+            }
+            scrollUpStart = -1;
+
+            if (headerElement.getAttribute("data-mobile-status") != "1") {
+                if (window.scrollY - scrollDownStart < height)
+                    parentElement.style.top = scrollDownStart - window.scrollY + "px";
+                else
+                    parentElement.style.top = "-100%";
+            }
         }
 
         prevScrollY = window.scrollY;
-    });
+    }
 });

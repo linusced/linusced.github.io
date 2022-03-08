@@ -1,13 +1,15 @@
 var resizeTimeout = null;
-var resizeCallbacks = [];
+var resizeCallbacks = [], scrollCallbacks = [];
 
 window.addEventListener("load", () => {
     document.querySelectorAll(".js-copy").forEach(btn => btn.addEventListener("click", async () => {
         await navigator.clipboard.writeText(btn.getAttribute("data-text"));
 
         btn.classList.add("active");
+        btn.style.cursor = "default";
         setTimeout(() => {
             btn.classList.remove("active");
+            btn.style.cursor = "";
         }, 1000);
     }));
 
@@ -24,4 +26,7 @@ window.addEventListener("resize", () => {
     resizeTimeout = setTimeout(() => {
         resizeCallbacks.forEach(callback => callback());
     }, 50);
+});
+window.addEventListener("scroll", () => {
+    scrollCallbacks.forEach(callback => callback());
 });
