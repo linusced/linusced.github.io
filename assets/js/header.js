@@ -104,6 +104,8 @@ window.addEventListener("load", () => {
         headerElement.style.transition = "height 0.3s linear";
         headerElement.style.overflow = "hidden";
 
+        parentElement.style.top = "0";
+
         setTimeout(() => {
             headerElement.style.height = endHeight + "px";
         }, 5);
@@ -119,7 +121,10 @@ window.addEventListener("load", () => {
     function scrollHeader() {
         const height = parentElement.getBoundingClientRect().height;
 
-        if (window.scrollY < prevScrollY) {
+        if (headerElement.getAttribute("data-mobile-status") == "1") {
+            scrollUpStart = scrollDownStart = -1;
+        }
+        else if (window.scrollY < prevScrollY) {
             if (scrollUpStart == -1) {
                 let scrollUpStartOffset = 0;
                 if (scrollDownStart != -1 && window.scrollY - scrollDownStart < height)
@@ -129,12 +134,10 @@ window.addEventListener("load", () => {
             }
             scrollDownStart = -1;
 
-            if (headerElement.getAttribute("data-mobile-status") != "1") {
-                if (scrollUpStart - window.scrollY < height)
-                    parentElement.style.top = -height + (scrollUpStart - window.scrollY) + "px";
-                else
-                    parentElement.style.top = "0";
-            }
+            if (scrollUpStart - window.scrollY < height)
+                parentElement.style.top = -height + (scrollUpStart - window.scrollY) + "px";
+            else
+                parentElement.style.top = "0";
         }
         else {
             if (scrollDownStart == -1) {
@@ -146,12 +149,10 @@ window.addEventListener("load", () => {
             }
             scrollUpStart = -1;
 
-            if (headerElement.getAttribute("data-mobile-status") != "1") {
-                if (window.scrollY - scrollDownStart < height)
-                    parentElement.style.top = scrollDownStart - window.scrollY + "px";
-                else
-                    parentElement.style.top = "-100%";
-            }
+            if (window.scrollY - scrollDownStart < height)
+                parentElement.style.top = scrollDownStart - window.scrollY + "px";
+            else
+                parentElement.style.top = "-100%";
         }
 
         prevScrollY = window.scrollY;

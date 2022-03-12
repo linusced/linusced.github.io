@@ -1,12 +1,15 @@
 :root {
     --color-white: #eee;
     --color-black: #1d1d1d;
-    --color-blue-1: #244b66;
-    --color-blue-2: #b1d0e0;
+    --color-blue-1: #071646;
+    --color-blue-2: #60b2db;
     --color-green: #24cf24;
-    --gradient: linear-gradient(to right, #c52668 0%, #42b6eb 16.66%, #7c3fee 33.33%, #c52668 50%, #42b6eb 66.66%, #7c3fee 83.33%, #c52668 100%);
+    --color-gradient-1: #ff0000;
+    --color-gradient-2: #cc00ff;
+    --color-gradient-3: #0066ff;
+    --gradient: linear-gradient(to right, var(--color-gradient-1) 0%, var(--color-gradient-2) 16.66%, var(--color-gradient-3) 33.33%, var(--color-gradient-1) 50%, var(--color-gradient-2) 66.66%, var(--color-gradient-3) 83.33%, var(--color-gradient-1) 100%);
     --border-width: 0.2rem;
-}   
+}
 
 .colors-1, .text-color {
     color: var(--color-blue-2);
