@@ -18,37 +18,40 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/header.js"></script>
     <script src="assets/js/color-gradients.js"></script>
+    <script src="assets/js/bg-canvas.js"></script>
 
     <title>linusced</title>
 </head>
 
-<body class="colors-1">
+<body class="static-bg-color">
+    <canvas id="bg-canvas" class="fixed-top-left negative-z"></canvas>
     <div class="container full-width fixed-top-left positive-z-2">
-        <div id="header" class="container row-wrap space-content full-width padding-horizontal-2 colors-1">
+        <div id="header" class="container row-wrap space-content full-width padding-horizontal-2 scheme-bg-color">
             <div id="header-title" class="container row space-content full-width">
-                <a href="./" class="button-no-text-dec margin-vertical-1">
+                <a href="./" class="margin-vertical-1 scheme-text-color">
                     <h3>linusced</h3>
                 </a>
-                <button id="header-toggle" class="icon-button hidden"><i class="fas fa-bars js-closed"></i><i
+                <button id="header-toggle" class="icon-button scheme-text-color hidden"><i
+                        class="fas fa-bars js-closed"></i><i
                         class="fas fa-times visibility-hidden js-open"></i></button>
             </div>
             <div id="header-nav" class="container row center-content positive-z">
                 <a href="#" class="default-button margin-horizontal-1 gradient-container js-gradient-container active">
                     <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text colors-2">Link 1</div>
+                    <div class="button-text scheme-default-colors">Link 1</div>
                 </a>
                 <a href="#" class="default-button margin-horizontal-1 gradient-container js-gradient-container">
                     <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text colors-2">Link 2</div>
+                    <div class="button-text scheme-default-colors">Link 2</div>
                 </a>
                 <a href="#" class="default-button margin-horizontal-1 gradient-container js-gradient-container">
                     <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text colors-2">Link 3</div>
+                    <div class="button-text scheme-default-colors">Link 3</div>
                 </a>
                 <a href="http://github.com/linusced/" target="_blank"
                     class="default-button margin-horizontal-1 gradient-container js-gradient-container">
                     <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text icon colors-2"><i class="fab fa-github"></i><span>GitHub</span>
+                    <div class="button-text icon scheme-default-colors"><i class="fab fa-github"></i><span>GitHub</span>
                     </div>
                 </a>
             </div>
@@ -56,12 +59,13 @@
                 class="container center-content margin-vertical-1 gradient-container js-gradient-container">
                 <span class="gradient js-gradient"></span>
                 <span class="semi-transparent-overlay"></span>
-                <div class="container row-wrap center-content padding-horizontal-1 border-width-margin positive-z">
-                    <p class="padding-right padding-top padding-bottom overlay-text-color">Contact:</p>
+                <div
+                    class="container row-wrap center-content padding-horizontal-1 border-width-margin positive-z scheme-text-color">
+                    <p class="padding-right padding-top padding-bottom">Contact:</p>
                     <a href="mailto:linuscedergren@gmail.com"
-                        class="overlay-text-color padding-top padding-bottom margin-right text-link">linuscedergren@gmail.com</a>
+                        class="padding-top padding-bottom margin-right text-link">linuscedergren@gmail.com</a>
                     <button class="alternate-button js-copy" data-text="linuscedergren@gmail.com">
-                        <div class="button-text colors-2">Copy</div>
+                        <div class="button-text scheme-default-colors-opaque">Copy</div>
                     </button>
                 </div>
             </div>
@@ -70,45 +74,84 @@
             <span class="gradient js-gradient"></span>
         </div>
     </div>
-    <div class="container full-width center-content padding-vertical-2">
-        <h1 class="margin-bottom">Hello, World!</h1>
-        <h2 class="margin-top">Front-End Web Projects:</h2>
-        <div class="container row-wrap center-content limit-width">
-            <div class="container margin-horizontal-2 margin-vertical-2 padding-vertical-1 padding-horizontal-1
-                gradient-container positive-z box-shadow-1 js-gradient-container">
-                <span class="gradient negative-z js-gradient"></span>
-                <img src="https://linusced.github.io/old-music-website/assets/images/bg.jpg" alt="img" height="250"
-                    width="250" class="img-square box-shadow-2">
-                <div class="container full-width-children full-width center-content">
-                    <h3 class="text-center margin-vertical-1 white-color">react-project chebab</h3>
-                    <a href="#" target="_blank" class="alternate-button">
-                        <div class="button-text icon colors-2 text-center"><i class="fab fa-github"></i><span>Source
-                                Code</span></div>
-                    </a>
-                    <a href="#" target="_blank" class="alternate-button">
-                        <div class="button-text colors-2 text-center">View</div>
-                    </a>
-                </div>
+    <div class="container full-width center-content padding-horizontal-2">
+        <div class="container limit-width center-content padding-horizontal-1 padding-vertical-3 scheme-default-colors">
+            <h1>Hello, World!</h1>
+            <div class="container full-width center-content padding-vertical-1">
+                <h3>Front-End Web Projects:</h3>
             </div>
-        </div>
-        <h2 class="margin-top">C++ Programming Projects:</h2>
-        <div class="container row-wrap center-content limit-width text-color">
-            <div class="container margin-horizontal-2 margin-vertical-2 padding-vertical-1 padding-horizontal-1
-                gradient-container positive-z box-shadow-1 js-gradient-container">
-                <span class="gradient negative-z js-gradient"></span>
-                <img src="https://linusced.github.io/old-music-website/assets/images/bg.jpg" alt="img" height="250"
-                    width="250" class="img-square box-shadow-2">
-                <div class="container full-width-children full-width center-content">
-                    <h3 class="text-center margin-vertical-1 white-color">potato-graphics</h3>
-                    <a href="#" target="_blank" class="alternate-button">
-                        <div class="button-text icon colors-2 text-center"><i class="fab fa-github"></i><span>Source
-                                Code</span></div>
-                    </a>
-                    <a href="#" class="alternate-button">
-                        <div class="button-text colors-2 text-center">View</div>
-                    </a>
-                </div>
-            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque accusantium quae rerum odio
+                perferendis ipsam maxime dolores autem beatae blanditiis nulla reprehenderit corrupti tempore excepturi
+                iure
+                debitis laudantium modi laborum aut vero soluta saepe, perspiciatis inventore. Consequatur temporibus in
+                facere quia velit fugit iusto error optio, nulla veniam iure ad alias perspiciatis! Magnam accusantium
+                eius
+                aut minus dolores ipsum beatae labore aspernatur voluptas ullam reprehenderit consectetur qui autem,
+                nemo
+                dolorum. A quod vero delectus illo voluptas dolore ipsa, asperiores, aspernatur maiores quibusdam soluta
+                quas, consequatur fugiat at. Iste, fugiat! Praesentium illo est vel neque consectetur molestiae esse ad
+                deleniti facere nesciunt temporibus numquam rerum deserunt, quibusdam, nulla, ullam beatae autem nam!
+                Praesentium debitis nisi distinctio rem excepturi amet fuga. Perferendis quaerat, libero error nostrum
+                totam
+                consequatur officiis corporis inventore ipsum! Nemo ratione sit obcaecati eos nostrum molestiae quo
+                maxime
+                incidunt deserunt eum praesentium dolore esse veritatis quisquam impedit facilis excepturi laudantium
+                provident, voluptatum officiis eligendi vitae reiciendis saepe at. Culpa iusto non esse ullam eaque
+                maxime
+                natus qui deleniti corrupti dicta expedita assumenda obcaecati, molestiae a quaerat, laudantium cum
+                repellat
+                nobis repellendus odio distinctio saepe ipsam quasi? Inventore voluptatibus tempora quaerat ab, debitis
+                similique. Quam itaque quo iste quasi suscipit. Esse veniam sit dolore! Suscipit dolor, officia
+                molestiae
+                ipsum, facilis vel magni dicta adipisci nam vitae excepturi amet, aut eveniet corrupti iste pariatur
+                architecto consequuntur! Nulla, nam magnam veniam suscipit cupiditate aspernatur rerum dolorem
+                blanditiis
+                quas deleniti impedit magni laboriosam est eum mollitia nisi nemo minima deserunt nihil, quae officia
+                quaerat perspiciatis asperiores molestias? Quia possimus perspiciatis sint. Dolor veritatis minima
+                assumenda
+                voluptatum corrupti sint, officia eaque distinctio at dolorum. Explicabo excepturi recusandae similique
+                quos
+                voluptas pariatur laborum omnis nam consequuntur? Ea tenetur ab aperiam perspiciatis in ducimus corrupti
+                amet, est, voluptate molestias minus sit, temporibus id eos soluta cum? Cupiditate, omnis error.
+                Necessitatibus, fugit quae, sapiente accusamus veritatis expedita temporibus neque delectus earum
+                assumenda
+                enim ducimus deserunt pariatur ipsum, fuga vel eos corrupti id! Alias, deleniti iste architecto sequi
+                incidunt reprehenderit laboriosam et. Enim cupiditate in nobis voluptas dolore deleniti quidem omnis
+                ipsam
+                rem officiis, quos assumenda aliquid dicta rerum ratione. Enim id, quos necessitatibus voluptatum, at
+                facilis beatae esse ratione aspernatur et quo qui delectus quia quaerat, natus corporis maiores facere
+                aperiam unde praesentium. Culpa fugiat vel ipsa id totam error dicta, magni fuga praesentium delectus,
+                soluta, exercitationem repellat ipsum iusto pariatur consectetur adipisci quisquam maiores. Est.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A accusantium commodi eaque doloremque qui
+                itaque facere odio explicabo, ipsa, sequi fugit tenetur magnam minima ut quae cumque similique eos?
+                Tempora minus animi molestias commodi nemo. Ipsam tenetur dolorum magni doloribus aliquid hic? Commodi
+                illum earum non quibusdam officia labore sit distinctio atque, modi eos exercitationem a enim doloremque
+                facilis totam asperiores ducimus! Iste sapiente esse iusto, vitae est dolor veritatis, at voluptates
+                possimus tempora aliquid molestias, corporis voluptas necessitatibus explicabo ea fugit aut iure magnam
+                molestiae nobis! Error, repellat quidem modi deleniti odit officia delectus, tempore saepe quibusdam
+                animi dolorem laborum praesentium aliquid veniam beatae quae. Exercitationem dolorum accusamus nobis
+                incidunt tempora omnis ipsam beatae odio suscipit commodi aliquam, recusandae perferendis distinctio
+                amet quos sed libero veniam aspernatur inventore quaerat eos repellendus iste! Numquam voluptatibus
+                repellendus maiores aliquam dolorem architecto alias quae suscipit eos ipsum atque ex reprehenderit
+                itaque asperiores, doloremque facilis inventore expedita cum, magni, impedit eius at accusamus.
+                Dignissimos distinctio quia reprehenderit, perspiciatis quis iusto, nostrum rerum, sint perferendis quos
+                labore soluta dolorem similique deserunt necessitatibus et asperiores ex a molestias aliquid quas
+                laborum incidunt alias unde. Consequuntur iusto placeat culpa adipisci aut dicta dignissimos doloremque
+                reprehenderit quod cum commodi autem non odio, expedita est illum aliquid, esse tempora sapiente, vitae
+                vel quae quaerat. Alias neque, quo ipsa tenetur cum quis temporibus error. Est mollitia rerum excepturi
+                ipsa, distinctio ex? Distinctio facere, sit quo quidem animi officiis voluptatem earum neque maiores
+                eius. Consectetur voluptates culpa ex, reiciendis magnam ab deleniti soluta quos fugit, a animi?
+                Laboriosam assumenda quia provident minima laudantium eum at qui necessitatibus, dolorum rerum
+                voluptatum quos repellat nulla hic optio officia illo totam nisi! Tempora perspiciatis eaque magni.
+                Earum beatae illo at exercitationem expedita in quam labore reprehenderit, hic atque quibusdam omnis
+                enim explicabo commodi quia sint praesentium doloremque deserunt aperiam officiis? Veritatis, excepturi
+                natus! Nihil voluptatem amet, laborum voluptates nisi commodi adipisci id aliquid itaque rerum minus,
+                suscipit atque, obcaecati placeat officiis repellendus omnis doloremque! Dignissimos porro ad est nobis
+                magnam! Dicta, blanditiis inventore laborum est natus tempora ipsum ducimus qui eveniet. Iure temporibus
+                laudantium consequuntur, facilis, vero obcaecati voluptatibus iste quaerat suscipit consequatur eveniet,
+                asperiores fugiat maiores adipisci quasi veniam ducimus mollitia molestiae enim? Qui accusantium
+                repellat placeat odio saepe aspernatur voluptas aliquid minima cum voluptatibus. Voluptatibus tempora
+                fuga eligendi consequatur nobis et itaque, vel iure inventore harum ipsum esse, laboriosam ad sint.</p>
         </div>
     </div>
 </body>
