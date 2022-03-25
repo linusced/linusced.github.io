@@ -19,8 +19,8 @@ window.addEventListener("load", () => {
         navElement.classList.remove("full-width");
         navElement.classList.remove("full-width-children");
 
-        navElement.style = "";
-        contactElement.style = "";
+        navElement.classList.remove("hidden-absolute");
+        contactElement.classList.remove("hidden-absolute");
 
         if (headerElement.getBoundingClientRect().width < navElement.getBoundingClientRect().width) {
             navElement.classList.remove("row");
@@ -67,8 +67,8 @@ window.addEventListener("load", () => {
         toggleElement.querySelector(".js-closed").classList.remove("visibility-hidden");
 
         if (noAnimation) {
-            navElement.style = "position: absolute; visibility: hidden;";
-            contactElement.style = "position: absolute; visibility: hidden;";
+            navElement.classList.add("hidden-absolute");
+            contactElement.classList.add("hidden-absolute");
         }
         else {
             const startHeight = headerElement.getBoundingClientRect().height,
@@ -83,8 +83,8 @@ window.addEventListener("load", () => {
             }, 5);
             setTimeout(() => {
                 headerElement.style.height = headerElement.style.transition = headerElement.style.overflow = "";
-                navElement.style = "position: absolute; visibility: hidden;";
-                contactElement.style = "position: absolute; visibility: hidden;";
+                navElement.classList.add("hidden-absolute");
+                contactElement.classList.add("hidden-absolute");
             }, 310);
         }
     }
@@ -94,8 +94,8 @@ window.addEventListener("load", () => {
         toggleElement.querySelector(".js-open").classList.remove("visibility-hidden");
         toggleElement.querySelector(".js-closed").classList.add("visibility-hidden");
 
-        navElement.style = "";
-        contactElement.style = "";
+        navElement.classList.remove("hidden-absolute");
+        contactElement.classList.remove("hidden-absolute");
 
         const startHeight = titleELement.getBoundingClientRect().height,
             endHeight = headerElement.getBoundingClientRect().height;

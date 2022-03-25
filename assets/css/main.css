@@ -1,6 +1,6 @@
 :root {
     --color-white: #eee;
-    --color-black: #1d1d1d;
+    --color-black: #111;
     --color-blue-1: #09153f;
     --color-blue-2: #c7edff;
     --color-green: #24cf24;
@@ -9,10 +9,6 @@
     --color-gradient-3: #0066ff;
     --gradient: linear-gradient(to right, var(--color-gradient-1) 0%, var(--color-gradient-2) 16.66%, var(--color-gradient-3) 33.33%, var(--color-gradient-1) 50%, var(--color-gradient-2) 66.66%, var(--color-gradient-3) 83.33%, var(--color-gradient-1) 100%);
     --border-width: 0.25rem;
-}
-
-.static-bg-color {
-    background-color: var(--color-blue-1);
 }
 
 .scheme-default-colors {
@@ -40,6 +36,16 @@
     outline: .2rem solid var(--color-white);
     outline-offset: .2rem;
 }
+body {
+    background-color: var(--color-black);
+}
+
+.static-bg-color-white {
+    background-color: var(--color-white);
+}
+.static-bg-color-black {
+    background-color: var(--color-black);
+}
 
 @media (prefers-color-scheme: light) {
     .scheme-default-colors, .scheme-default-colors-opaque {
@@ -52,11 +58,14 @@
     .scheme-text-color {
         color: var(--color-blue-1);
     }
-    .semi-transparent-overlay {
+    .semi-transparent-overlay:not(.dark) {
         filter: invert(1);
     }
     :focus {
         outline-color: var(--color-black);
+    }
+    body {
+        background-color: var(--color-white);
     }
 }
 
@@ -152,6 +161,19 @@ body {
     margin-right: 1rem;
 }
 
+.no-margin-top, .no-margin {
+    margin-top: 0 !important;
+}
+.no-margin-bottom, .no-margin {
+    margin-bottom: 0 !important;
+}
+.no-margin-left, .no-margin {
+    margin-left: 0 !important;
+}
+.no-margin-right, .no-margin {
+    margin-right: 0 !important;
+}
+
 .padding-top {
     padding-top: .5rem;
 }
@@ -165,6 +187,19 @@ body {
     padding-right: .5rem;
 }
 
+.no-padding-top, .no-padding {
+    padding-top: 0 !important;
+}
+.no-padding-bottom, .no-padding {
+    padding-bottom: 0 !important;
+}
+.no-padding-left, .no-padding {
+    padding-left: 0 !important;
+}
+.no-padding-right, .no-padding {
+    padding-right: 0 !important;
+}
+
 .positive-z {
     z-index: 1;
 }
@@ -173,6 +208,9 @@ body {
 }
 .positive-z-2 {
     z-index: 2;
+}
+.positive-z-3 {
+    z-index: 3;
 }
 
 .box-shadow-1 {
@@ -188,4 +226,11 @@ body {
 .visibility-hidden {
     visibility: hidden !important;
     opacity: 0 !important;
+}
+.hidden-absolute {
+    visibility: hidden !important;
+    position: absolute !important;
+}
+.hidden-absolute * {
+    visibility: hidden !important;
 }

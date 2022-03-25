@@ -1,0 +1,29 @@
+#header-container:focus-within {
+    top: 0 !important;
+}
+
+#project-popup-close {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 3rem;
+}
+
+#project-popup-images {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 700px) {
+    #project-popup-close {
+        top: 0;
+        left: 0.4rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .hide-on-small-screens {
+        display: none !important;
+    }
+}

@@ -1,4 +1,4 @@
-p {
+p, li {
     font-size: 1rem;
     line-height: 1.2;
 }
@@ -23,4 +23,16 @@ h3 {
 }
 .text-right {
     text-align: right;
+}
+
+@media (max-width: 600px) {
+    h1:not(.static-font-size) {
+        font-size: 2.45rem;
+    }
+    h2:not(.static-font-size) {
+        font-size: 1.75rem;
+    }
+    h3:not(.static-font-size) {
+        font-size: 1.4rem;
+    }
 }

@@ -14,39 +14,39 @@
     <link rel="stylesheet" href="assets/css/containers.css">
     <link rel="stylesheet" href="assets/css/buttons.css">
     <link rel="stylesheet" href="assets/css/text.css">
+    <link rel="stylesheet" href="assets/css/images.css">
+    <link rel="stylesheet" href="assets/css/unique.css">
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/header.js"></script>
     <script src="assets/js/color-gradients.js"></script>
-    <script src="assets/js/bg-canvas.js"></script>
+    <script src="assets/js/project-popup.js"></script>
+    <script src="assets/js/projects.js"></script>
 
     <title>linusced</title>
 </head>
 
-<body class="static-bg-color">
-    <canvas id="bg-canvas" class="fixed-top-left negative-z"></canvas>
-    <div class="container full-width fixed-top-left positive-z-2">
+<body class="scheme-text-color">
+    <div class="cpp-code-background fixed-top-left"></div>
+    <div id="header-container" class="container full-width fixed-top-left positive-z-2">
         <div id="header" class="container row-wrap space-content full-width padding-horizontal-2 scheme-bg-color">
             <div id="header-title" class="container row space-content full-width">
                 <a href="./" class="margin-vertical-1 scheme-text-color">
-                    <h3>linusced</h3>
+                    <h3 class="static-font-size">linusced</h3>
                 </a>
-                <button id="header-toggle" class="icon-button scheme-text-color hidden"><i
-                        class="fas fa-bars js-closed"></i><i
-                        class="fas fa-times visibility-hidden js-open"></i></button>
+                <button id="header-toggle" class="icon-button scheme-text-color hidden">
+                    <i class="fas fa-bars js-closed"></i>
+                    <i class="fas fa-times visibility-hidden js-open"></i>
+                </button>
             </div>
             <div id="header-nav" class="container row center-content positive-z">
-                <a href="#" class="default-button margin-horizontal-1 gradient-container js-gradient-container active">
+                <a href="./" class="default-button margin-horizontal-1 gradient-container js-gradient-container active">
                     <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text scheme-default-colors">Link 1</div>
+                    <div class="button-text scheme-default-colors">Home</div>
                 </a>
                 <a href="#" class="default-button margin-horizontal-1 gradient-container js-gradient-container">
                     <span class="gradient negative-z js-gradient"></span>
                     <div class="button-text scheme-default-colors">Link 2</div>
-                </a>
-                <a href="#" class="default-button margin-horizontal-1 gradient-container js-gradient-container">
-                    <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text scheme-default-colors">Link 3</div>
                 </a>
                 <a href="http://github.com/linusced/" target="_blank"
                     class="default-button margin-horizontal-1 gradient-container js-gradient-container">
@@ -74,84 +74,260 @@
             <span class="gradient js-gradient"></span>
         </div>
     </div>
-    <div class="container full-width center-content padding-horizontal-2">
-        <div class="container limit-width center-content padding-horizontal-1 padding-vertical-3 scheme-default-colors">
-            <h1>Hello, World!</h1>
-            <div class="container full-width center-content padding-vertical-1">
-                <h3>Front-End Web Projects:</h3>
+    <div id="project-popup"
+        class="container fixed-top-left center-content full-width full-height semi-transparent-overlay dark positive-z-2 hidden">
+        <div class="container full-width border-width-padding gradient-container js-gradient-container">
+            <span class="gradient js-gradient"></span>
+            <div
+                class="container relative full-width center-content scheme-default-colors-opaque positive-z-3 padding-vertical-2 padding-horizontal-1">
+                <button id="project-popup-close" class="icon-button scheme-text-color">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h1 id="project-popup-title" class="text-center margin-bottom"></h1>
+                <div class="container static-bg-color-black border-width-padding">
+                    <div class="container static-bg-color-white border-width-padding">
+                        <div id="project-popup-images" class="container row-wrap center-content static-bg-color-white">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque accusantium quae rerum odio
-                perferendis ipsam maxime dolores autem beatae blanditiis nulla reprehenderit corrupti tempore excepturi
-                iure
-                debitis laudantium modi laborum aut vero soluta saepe, perspiciatis inventore. Consequatur temporibus in
-                facere quia velit fugit iusto error optio, nulla veniam iure ad alias perspiciatis! Magnam accusantium
-                eius
-                aut minus dolores ipsum beatae labore aspernatur voluptas ullam reprehenderit consectetur qui autem,
-                nemo
-                dolorum. A quod vero delectus illo voluptas dolore ipsa, asperiores, aspernatur maiores quibusdam soluta
-                quas, consequatur fugiat at. Iste, fugiat! Praesentium illo est vel neque consectetur molestiae esse ad
-                deleniti facere nesciunt temporibus numquam rerum deserunt, quibusdam, nulla, ullam beatae autem nam!
-                Praesentium debitis nisi distinctio rem excepturi amet fuga. Perferendis quaerat, libero error nostrum
-                totam
-                consequatur officiis corporis inventore ipsum! Nemo ratione sit obcaecati eos nostrum molestiae quo
-                maxime
-                incidunt deserunt eum praesentium dolore esse veritatis quisquam impedit facilis excepturi laudantium
-                provident, voluptatum officiis eligendi vitae reiciendis saepe at. Culpa iusto non esse ullam eaque
-                maxime
-                natus qui deleniti corrupti dicta expedita assumenda obcaecati, molestiae a quaerat, laudantium cum
-                repellat
-                nobis repellendus odio distinctio saepe ipsam quasi? Inventore voluptatibus tempora quaerat ab, debitis
-                similique. Quam itaque quo iste quasi suscipit. Esse veniam sit dolore! Suscipit dolor, officia
-                molestiae
-                ipsum, facilis vel magni dicta adipisci nam vitae excepturi amet, aut eveniet corrupti iste pariatur
-                architecto consequuntur! Nulla, nam magnam veniam suscipit cupiditate aspernatur rerum dolorem
-                blanditiis
-                quas deleniti impedit magni laboriosam est eum mollitia nisi nemo minima deserunt nihil, quae officia
-                quaerat perspiciatis asperiores molestias? Quia possimus perspiciatis sint. Dolor veritatis minima
-                assumenda
-                voluptatum corrupti sint, officia eaque distinctio at dolorum. Explicabo excepturi recusandae similique
-                quos
-                voluptas pariatur laborum omnis nam consequuntur? Ea tenetur ab aperiam perspiciatis in ducimus corrupti
-                amet, est, voluptate molestias minus sit, temporibus id eos soluta cum? Cupiditate, omnis error.
-                Necessitatibus, fugit quae, sapiente accusamus veritatis expedita temporibus neque delectus earum
-                assumenda
-                enim ducimus deserunt pariatur ipsum, fuga vel eos corrupti id! Alias, deleniti iste architecto sequi
-                incidunt reprehenderit laboriosam et. Enim cupiditate in nobis voluptas dolore deleniti quidem omnis
-                ipsam
-                rem officiis, quos assumenda aliquid dicta rerum ratione. Enim id, quos necessitatibus voluptatum, at
-                facilis beatae esse ratione aspernatur et quo qui delectus quia quaerat, natus corporis maiores facere
-                aperiam unde praesentium. Culpa fugiat vel ipsa id totam error dicta, magni fuga praesentium delectus,
-                soluta, exercitationem repellat ipsum iusto pariatur consectetur adipisci quisquam maiores. Est.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A accusantium commodi eaque doloremque qui
-                itaque facere odio explicabo, ipsa, sequi fugit tenetur magnam minima ut quae cumque similique eos?
-                Tempora minus animi molestias commodi nemo. Ipsam tenetur dolorum magni doloribus aliquid hic? Commodi
-                illum earum non quibusdam officia labore sit distinctio atque, modi eos exercitationem a enim doloremque
-                facilis totam asperiores ducimus! Iste sapiente esse iusto, vitae est dolor veritatis, at voluptates
-                possimus tempora aliquid molestias, corporis voluptas necessitatibus explicabo ea fugit aut iure magnam
-                molestiae nobis! Error, repellat quidem modi deleniti odit officia delectus, tempore saepe quibusdam
-                animi dolorem laborum praesentium aliquid veniam beatae quae. Exercitationem dolorum accusamus nobis
-                incidunt tempora omnis ipsam beatae odio suscipit commodi aliquam, recusandae perferendis distinctio
-                amet quos sed libero veniam aspernatur inventore quaerat eos repellendus iste! Numquam voluptatibus
-                repellendus maiores aliquam dolorem architecto alias quae suscipit eos ipsum atque ex reprehenderit
-                itaque asperiores, doloremque facilis inventore expedita cum, magni, impedit eius at accusamus.
-                Dignissimos distinctio quia reprehenderit, perspiciatis quis iusto, nostrum rerum, sint perferendis quos
-                labore soluta dolorem similique deserunt necessitatibus et asperiores ex a molestias aliquid quas
-                laborum incidunt alias unde. Consequuntur iusto placeat culpa adipisci aut dicta dignissimos doloremque
-                reprehenderit quod cum commodi autem non odio, expedita est illum aliquid, esse tempora sapiente, vitae
-                vel quae quaerat. Alias neque, quo ipsa tenetur cum quis temporibus error. Est mollitia rerum excepturi
-                ipsa, distinctio ex? Distinctio facere, sit quo quidem animi officiis voluptatem earum neque maiores
-                eius. Consectetur voluptates culpa ex, reiciendis magnam ab deleniti soluta quos fugit, a animi?
-                Laboriosam assumenda quia provident minima laudantium eum at qui necessitatibus, dolorum rerum
-                voluptatum quos repellat nulla hic optio officia illo totam nisi! Tempora perspiciatis eaque magni.
-                Earum beatae illo at exercitationem expedita in quam labore reprehenderit, hic atque quibusdam omnis
-                enim explicabo commodi quia sint praesentium doloremque deserunt aperiam officiis? Veritatis, excepturi
-                natus! Nihil voluptatem amet, laborum voluptates nisi commodi adipisci id aliquid itaque rerum minus,
-                suscipit atque, obcaecati placeat officiis repellendus omnis doloremque! Dignissimos porro ad est nobis
-                magnam! Dicta, blanditiis inventore laborum est natus tempora ipsum ducimus qui eveniet. Iure temporibus
-                laudantium consequuntur, facilis, vero obcaecati voluptatibus iste quaerat suscipit consequatur eveniet,
-                asperiores fugiat maiores adipisci quasi veniam ducimus mollitia molestiae enim? Qui accusantium
-                repellat placeat odio saepe aspernatur voluptas aliquid minima cum voluptatibus. Voluptatibus tempora
-                fuga eligendi consequatur nobis et itaque, vel iure inventore harum ipsum esse, laboriosam ad sint.</p>
+        </div>
+    </div>
+    <div class="container relative margin-vertical-3">
+        <img src="assets/images/app-images/transparent.png" class="app-image">
+        <div class="container app-image-content transparent-image border-width-padding-2 js-gradient-container">
+            <span class="gradient js-gradient"></span>
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 full-width full-height border-width-radius positive-z scheme-default-colors-opaque text-center">
+                <h1>Linus Cedergren</h1>
+                <h3 class="margin-vertical-1">C++ Programmer & Front-End Web Developer</h3>
+                <p class="hide-on-small-screens">Other hobbies include: Sound Design, Music Production & 3D
+                    Graphics.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container relative margin-vertical-3">
+        <img src="assets/images/app-images/transparent.png" class="app-image">
+        <div class="container app-image-content transparent-image border-width-padding-2 js-gradient-container">
+            <span class="gradient js-gradient"></span>
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 full-width full-height border-width-radius positive-z scheme-default-colors-opaque text-center">
+                <h1>My Projects:</h1>
+                <div
+                    class="container margin-vertical-2 border-width-padding center-content full-width-children gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <button class="alternate-button js-project-filter-button positive-z no-margin active"
+                        data-project-filter="js-cpp-active-project">
+                        <div class="button-text scheme-default-colors-opaque">Active C++ Projects</div>
+                    </button>
+                    <button class="alternate-button js-project-filter-button positive-z no-margin-left no-margin-right"
+                        data-project-filter="js-cpp-abandoned-project">
+                        <div class="button-text scheme-default-colors-opaque">Abandoned C++ Projects</div>
+                    </button>
+                    <button class="alternate-button js-project-filter-button positive-z no-margin"
+                        data-project-filter="js-web-project">
+                        <div class="button-text scheme-default-colors-opaque">Front End Web Projects</div>
+                    </button>
+                    <button
+                        class="alternate-button js-project-filter-button positive-z no-margin-left no-margin-right no-margin-bottom"
+                        data-project-filter="js-professional-website">
+                        <div class="button-text scheme-default-colors-opaque">Professional Websites</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CPP Active Project -->
+    <div class="container relative margin-vertical-3 js-cpp-active-project">
+        <img src="assets/images/app-images/poker_ai.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Poker AI</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <a href="https://github.com/linusced/poker_ai/" target="_blank"
+                        class="alternate-button positive-z no-margin-right">
+                        <div class="button-text icon scheme-default-colors-opaque"><i
+                                class="fab fa-github"></i><span>Source
+                                Code</span>
+                        </div>
+                    </a>
+                    <button class="alternate-button positive-z js-project-popup-open" data-title="Poker AI"
+                        data-images="assets/images/project-popup-images/poker_ai_1.jpg assets/images/project-popup-images/poker_ai_2.jpg assets/images/project-popup-images/poker_ai_3.jpg assets/images/project-popup-images/poker_ai_4.jpg assets/images/project-popup-images/poker_ai_5.jpg assets/images/project-popup-images/poker_ai_6.jpg">
+                        <div class="button-text scheme-default-colors-opaque">
+                            View</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CPP Active Project -->
+    <div class="container relative margin-vertical-3 js-cpp-active-project">
+        <img src="assets/images/app-images/audio_synthesizer.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Audio Synthesizer</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <a href="https://github.com/linusced/audio_synthesizer/" target="_blank"
+                        class="alternate-button positive-z no-margin-right">
+                        <div class="button-text icon scheme-default-colors-opaque"><i
+                                class="fab fa-github"></i><span>Source
+                                Code</span>
+                        </div>
+                    </a>
+                    <button class="alternate-button positive-z js-project-popup-open" data-title="Audio Synthesizer"
+                        data-images="assets/images/project-popup-images/audio_synthesizer_1.jpg assets/images/project-popup-images/audio_synthesizer_2.jpg assets/images/project-popup-images/audio_synthesizer_3.jpg assets/images/project-popup-images/audio_synthesizer_4.jpg assets/images/project-popup-images/audio_synthesizer_5.jpg">
+                        <div class="button-text scheme-default-colors-opaque">
+                            View</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CPP Abandoned Project -->
+    <div class="container relative margin-vertical-3 js-cpp-abandoned-project hidden">
+        <img src="assets/images/app-images/zero_g.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Zero G</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <a href="https://github.com/linusced/zero_g/" target="_blank"
+                        class="alternate-button positive-z no-margin-right">
+                        <div class="button-text icon scheme-default-colors-opaque"><i
+                                class="fab fa-github"></i><span>Source
+                                Code</span>
+                        </div>
+                    </a>
+                    <button class="alternate-button positive-z js-project-popup-open" data-title="Zero G"
+                        data-images="assets/images/project-popup-images/zero_g_1.jpg assets/images/project-popup-images/zero_g_2.jpg assets/images/project-popup-images/zero_g_3.jpg assets/images/project-popup-images/zero_g_4.jpg">
+                        <div class="button-text scheme-default-colors-opaque">
+                            View</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CPP Abandoned Project -->
+    <div class="container relative margin-vertical-3 js-cpp-abandoned-project hidden">
+        <img src="assets/images/app-images/orbital_physics.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Orbital Physics</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <button class="alternate-button positive-z js-project-popup-open" data-title="Orbital Physics"
+                        data-images="assets/images/project-popup-images/orbital_physics_1.jpg assets/images/project-popup-images/orbital_physics_2.jpg">
+                        <div class="button-text scheme-default-colors-opaque">
+                            View</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CPP Abandoned Project -->
+    <div class="container relative margin-vertical-3 js-cpp-abandoned-project hidden">
+        <img src="assets/images/app-images/poker.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Poker</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <button class="alternate-button positive-z js-project-popup-open" data-title="Poker"
+                        data-images="assets/images/project-popup-images/poker_1.jpg assets/images/project-popup-images/poker_2.jpg assets/images/project-popup-images/poker_3.jpg assets/images/project-popup-images/poker_4.jpg">
+                        <div class="button-text scheme-default-colors-opaque">
+                            View</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CPP Abandoned Project -->
+    <div class="container relative margin-vertical-3 js-cpp-abandoned-project hidden">
+        <img src="assets/images/app-images/chess.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Chess</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <button class="alternate-button positive-z js-project-popup-open" data-title="Chess"
+                        data-images="assets/images/project-popup-images/chess_1.jpg assets/images/project-popup-images/chess_2.jpg">
+                        <div class="button-text scheme-default-colors-opaque">
+                            View</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Web Project -->
+    <div class="container relative margin-vertical-3 js-web-project hidden">
+        <img src="assets/images/app-images/audio-events.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Audio Events</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <a href="https://github.com/linusced/audio-events/" target="_blank"
+                        class="alternate-button positive-z no-margin-right">
+                        <div class="button-text icon scheme-default-colors-opaque"><i
+                                class="fab fa-github"></i><span>Source
+                                Code</span>
+                        </div>
+                    </a>
+                    <a href="https://linusced.github.io/audio-events/" target="_blank"
+                        class="alternate-button positive-z">
+                        <div class="button-text scheme-default-colors-opaque">View</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Web Project -->
+    <div class="container relative margin-vertical-3 js-web-project hidden">
+        <img src="assets/images/app-images/old-music-website.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Old Music Website</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <a href="https://github.com/linusced/old-music-website/" target="_blank"
+                        class="alternate-button positive-z no-margin-right">
+                        <div class="button-text icon scheme-default-colors-opaque"><i
+                                class="fab fa-github"></i><span>Source
+                                Code</span>
+                        </div>
+                    </a>
+                    <a href="https://linusced.github.io/old-music-website/" target="_blank"
+                        class="alternate-button positive-z">
+                        <div class="button-text scheme-default-colors-opaque">View</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Professional Website -->
+    <div class="container relative margin-vertical-3 js-professional-website hidden">
+        <img src="assets/images/app-images/vingarden.png" class="app-image">
+        <div class="container app-image-content padding-vertical-1 padding-horizontal-1 center-content">
+            <div
+                class="container center-content padding-vertical-1 padding-horizontal-1 large-radius scheme-default-colors-opaque positive-z">
+                <h1 class="text-center">Vingården</h1>
+                <div class="container row margin-top gradient-container js-gradient-container">
+                    <span class="gradient js-gradient"></span>
+                    <a href="https://vingarden.eu" target="_blank" class="alternate-button positive-z">
+                        <div class="button-text scheme-default-colors-opaque">View</div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
