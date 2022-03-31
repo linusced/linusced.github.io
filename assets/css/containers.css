@@ -1,0 +1,127 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.relative {
+    position: relative;
+}
+
+.full-width, .full-width-children > * {
+    width: 100%;
+}
+.max-width {
+    max-width: 100%;
+}
+.limit-width {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.center-content {
+    justify-content: center;
+    align-items: center;
+}
+.center-content-justify {
+    justify-content: center;
+}
+.center-content-align {
+    align-items: center;
+}
+.space-content {
+    justify-content: space-around;
+    align-items: center;
+}
+.space-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row {
+    flex-flow: row nowrap;
+}
+.row-wrap {
+    flex-flow: row wrap;
+}
+.grow {
+    flex-grow: 1;
+}
+
+.border-height {
+    height: var(--border-width);
+}
+.border-width-margin {
+    margin: var(--border-width);
+}
+.border-width-padding {
+    padding: var(--border-width);
+}
+.border-width-padding-2 {
+    padding: calc(var(--border-width) + var(--border-width));
+}
+.border-width-radius {
+    border-radius: var(--border-width);
+}
+
+@media (max-width: 600px) {
+    .border-width-padding-2 {
+        padding: var(--border-width);
+    }
+}
+
+.large-radius {
+    border-radius: 1rem;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.fixed-top-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.fixed-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fullscreen-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.gradient-container {
+    overflow: hidden;
+    position: relative;
+}
+.gradient {
+    position: absolute;
+    top: 0;
+    width: 200vw;
+    height: 100%;
+    background: var(--gradient);
+    animation: gradient-animation 10s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+    .gradient {
+        animation: none;
+    }
+}
+
+@keyframes gradient-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
