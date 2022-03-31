@@ -76,10 +76,14 @@ window.addEventListener("load", () => {
         projectPopup.querySelectorAll("button, a").forEach(_button => _button.tabIndex = 0);
 
         const projectPopupContainer = projectPopup.querySelector("#project-popup-container");
-        if (projectPopupContainer.querySelector(".container").getBoundingClientRect().height > window.innerHeight)
+        if (projectPopupContainer.querySelector(".container").getBoundingClientRect().height > window.innerHeight) {
             projectPopupContainer.querySelector(".gradient").style.position = "fixed";
-        else
+            projectPopupClose.style = "position: fixed; top: 4vh; z-index: 4;";
+        }
+        else {
             projectPopupContainer.querySelector(".gradient").style.position = "";
+            projectPopupClose.style = "";
+        }
     }
 
     document.querySelector("#project-popup-prev-image").addEventListener("click", () => {

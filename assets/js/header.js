@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
         navElement.classList.remove("hidden-absolute");
         contactElement.classList.remove("hidden-absolute");
 
-        if (headerElement.getBoundingClientRect().width < navElement.getBoundingClientRect().width) {
+        if (window.innerWidth < 500 || headerElement.getBoundingClientRect().width < navElement.getBoundingClientRect().width) {
             navElement.classList.remove("row");
             navElement.classList.add("column");
             navElement.classList.add("full-width");
