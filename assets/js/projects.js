@@ -14,11 +14,11 @@ window.addEventListener("load", () => {
         projectFilterButtons.forEach(btn => {
             if (btn != activeBtn) {
                 btn.classList.remove("active");
-                document.querySelectorAll(`.${btn.getAttribute("data-project-filter")}`).forEach(e => e.classList.add("hidden"));
+                document.querySelectorAll(`.${btn.getAttribute("data-project-filter")}`).forEach(e => e.classList.add("hidden-absolute"));
             }
             else {
                 btn.classList.add("active");
-                document.querySelectorAll(`.${btn.getAttribute("data-project-filter")}`).forEach(e => e.classList.remove("hidden"));
+                document.querySelectorAll(`.${btn.getAttribute("data-project-filter")}`).forEach(e => e.classList.remove("hidden-absolute"));
             }
         });
 

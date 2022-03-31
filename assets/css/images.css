@@ -29,13 +29,13 @@
 }
 
 .project-popup-image {
-    width: 48%;
-    height: auto;
-    margin: 1%;
+    width: 48vw;
+    height: 27.024vw;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .project-popup-image {
-        width: 98%;
+        width: 98vw;
+        height: 55.174vw;
     }
 }

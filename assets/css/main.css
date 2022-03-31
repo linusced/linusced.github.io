@@ -1,6 +1,7 @@
 :root {
     --color-white: #eee;
     --color-black: #111;
+    --color-gray: #808080;
     --color-blue-1: #09153f;
     --color-blue-2: #c7edff;
     --color-green: #24cf24;
@@ -21,6 +22,9 @@
 .scheme-bg-color {
     background-color: var(--color-blue-1);
 }
+.scheme-bg-color-grayscale {
+    background-color: var(--color-black);
+}
 .scheme-text-color {
     color: var(--color-blue-2);
 }
@@ -32,18 +36,29 @@
     height: 100%;
     background: #0008;
 }
-:focus {
-    outline: .2rem solid var(--color-white);
-    outline-offset: .2rem;
-}
-body {
-    background-color: var(--color-black);
-}
 
 .static-bg-color-white {
     background-color: var(--color-white);
 }
 .static-bg-color-black {
+    background-color: var(--color-black);
+}
+.static-bg-color-gray {
+    background-color: var(--color-gray);
+}
+
+.static-color-white {
+    color: var(--color-white);
+}
+.static-color-black {
+    color: var(--color-black);
+}
+
+:focus {
+    outline: .2rem solid var(--color-white);
+    outline-offset: .2rem;
+}
+body {
     background-color: var(--color-black);
 }
 
@@ -54,6 +69,9 @@ body {
     }
     .scheme-bg-color {
         background-color: var(--color-blue-2);
+    }
+    .scheme-bg-color-grayscale {
+        background-color: var(--color-white);
     }
     .scheme-text-color {
         color: var(--color-blue-1);
