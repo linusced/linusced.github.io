@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/fontawesome/css/brands.min.css">
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/containers.css">
     <link rel="stylesheet" href="assets/css/buttons.css">
     <link rel="stylesheet" href="assets/css/text.css">
@@ -56,7 +57,7 @@
                 <span class="gradient js-gradient"></span>
                 <span class="semi-transparent-overlay"></span>
                 <div
-                    class="container row-wrap center-content padding-horizontal-1 border-width-margin positive-z scheme-text-color">
+                    class="container row-wrap center-content padding-horizontal-1 border-width-margin positive-z scheme-text-color max-width-vw">
                     <p class="padding-right padding-top padding-bottom">Contact:</p>
                     <a href="mailto:linuscedergren@gmail.com"
                         class="padding-top padding-bottom margin-right text-link">linuscedergren@gmail.com</a>
@@ -72,7 +73,8 @@
     </div>
     <div id="project-popup"
         class="container fixed-top-left center-content full-width full-height semi-transparent-overlay dark positive-z-2 visibility-hidden">
-        <div class="container full-width border-width-padding gradient-container js-gradient-container">
+        <div id="project-popup-container"
+            class="container full-width border-width-padding gradient-container js-gradient-container">
             <span class="gradient js-gradient"></span>
             <div
                 class="container relative full-width center-content scheme-default-colors-opaque positive-z-3 padding-vertical-2 padding-horizontal-1">
@@ -126,7 +128,7 @@
             <div
                 class="container center-content padding-vertical-1 padding-horizontal-1 full-width full-height border-width-radius positive-z scheme-default-colors-opaque text-center">
                 <h1>My Projects:</h1>
-                <div
+                <div id="project-filter"
                     class="container margin-vertical-2 border-width-padding center-content full-width-children gradient-container js-gradient-container">
                     <span class="gradient js-gradient"></span>
                     <button class="alternate-button js-project-filter-button positive-z no-margin active"

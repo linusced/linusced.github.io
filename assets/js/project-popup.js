@@ -74,6 +74,12 @@ window.addEventListener("load", () => {
 
         document.querySelectorAll("button, a").forEach(_button => _button.tabIndex = -1);
         projectPopup.querySelectorAll("button, a").forEach(_button => _button.tabIndex = 0);
+
+        const projectPopupContainer = projectPopup.querySelector("#project-popup-container");
+        if (projectPopupContainer.querySelector(".container").getBoundingClientRect().height > window.innerHeight)
+            projectPopupContainer.querySelector(".gradient").style.position = "fixed";
+        else
+            projectPopupContainer.querySelector(".gradient").style.position = "";
     }
 
     document.querySelector("#project-popup-prev-image").addEventListener("click", () => {
