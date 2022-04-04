@@ -31,14 +31,20 @@ window.addEventListener("load", () => {
         const imageUrls = btn.getAttribute("data-images").split(' ');
         projectPopupImageElements = [];
 
+        projectPopup.querySelector("#project-popup-next-image").style.display = projectPopup.querySelector("#project-popup-prev-image").style.display = imageUrls.length > 1 ? "" : "none";
+
         for (let i = 0; i < imageUrls.length; i++) {
             const isIframe = imageUrls[i].includes("youtube");
             const img = document.createElement(isIframe ? "iframe" : "img");
             img.src = imageUrls[i];
             img.className = "project-popup-image";
 
-            if (isIframe)
+            if (isIframe) {
                 img.setAttribute("frameborder", "0");
+                img.title = "Youtube video player";
+                img.setAttribute("allow", "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                img.allowFullscreen = true;
+            }
 
             if (i != 0)
                 img.classList.add("hidden");
@@ -86,7 +92,7 @@ window.addEventListener("load", () => {
         }
     }
 
-    document.querySelector("#project-popup-prev-image").addEventListener("click", () => {
+    projectPopup.querySelector("#project-popup-prev-image").addEventListener("click", () => {
         for (let i = 0; i < projectPopupImageElements.length; i++)
             if (!projectPopupImageElements[i].classList.contains("hidden")) {
                 projectPopupImageElements[i].classList.add("hidden");
@@ -100,7 +106,7 @@ window.addEventListener("load", () => {
             }
     });
 
-    document.querySelector("#project-popup-next-image").addEventListener("click", () => {
+    projectPopup.querySelector("#project-popup-next-image").addEventListener("click", () => {
         for (let i = 0; i < projectPopupImageElements.length; i++)
             if (!projectPopupImageElements[i].classList.contains("hidden")) {
                 projectPopupImageElements[i].classList.add("hidden");
