@@ -8,6 +8,7 @@ window.addEventListener("load", () => {
         toggleElement = document.querySelector("#header-toggle");
 
     parentHeightElement.className = "container full-width";
+    parentHeightElement.id = "header-height";
     document.body.insertBefore(parentHeightElement, parentElement);
 
     resizeCallbacks.push(resizeHeader);
@@ -22,7 +23,7 @@ window.addEventListener("load", () => {
         navElement.classList.remove("hidden-absolute");
         contactElement.classList.remove("hidden-absolute");
 
-        if (window.innerWidth < 500 || headerElement.getBoundingClientRect().width < navElement.getBoundingClientRect().width) {
+        if (window.innerWidth < 1000 || headerElement.getBoundingClientRect().width < navElement.getBoundingClientRect().width) {
             navElement.classList.remove("row");
             navElement.classList.add("column");
             navElement.classList.add("full-width");
@@ -121,7 +122,7 @@ window.addEventListener("load", () => {
     function scrollHeader() {
         const height = parentElement.getBoundingClientRect().height;
 
-        if (headerElement.getAttribute("data-mobile-status") == "1") {
+        if (headerElement.getAttribute("data-mobile-status") != "-1") {
             scrollUpStart = scrollDownStart = -1;
         }
         else if (window.scrollY < prevScrollY) {

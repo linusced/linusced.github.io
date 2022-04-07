@@ -42,17 +42,24 @@
     overflow-y: auto;
 }
 
-#project-filter.project-filter-fixed {
+#project-filter-fixed {
     position: fixed;
-    top: 0;
     margin: 0;
-    padding: 0;
-    flex-direction: row;
+    top: 0;
+    flex-direction: column;
+    z-index: 1;
 }
 
-#project-filter.project-filter-fixed>button {
-    width: auto;
-    margin: var(--border-width) !important;
+@media (min-width: 1001px) {
+    #project-filter-fixed>button {
+        width: auto;
+        margin: var(--border-width) !important;
+    }
+
+    #project-filter-fixed {
+        flex-direction: row;
+        padding: 0;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -77,7 +84,8 @@
         display: none !important;
     }
 
-    #project-filter {
+    #project-filter,
+    #project-filter-fixed {
         margin-top: 0;
         margin-bottom: 0;
         transform: scale(.8);

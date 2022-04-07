@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
 
     const buttons = document.querySelectorAll("button, a");
     buttons.forEach(btn => btn.addEventListener("mousedown", () => btn.style.outline = "none"));
-    document.body.addEventListener("mouseup", e => buttons.forEach(btn => {
+    document.body.addEventListener("mouseup", () => buttons.forEach(btn => {
         btn.style.outline = "";
         btn.blur();
     }));
