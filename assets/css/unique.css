@@ -42,6 +42,19 @@
     overflow-y: auto;
 }
 
+#project-filter.project-filter-fixed {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+}
+
+#project-filter.project-filter-fixed>button {
+    width: auto;
+    margin: var(--border-width) !important;
+}
+
 @media (max-width: 1000px) {
     #project-popup-close {
         top: 0;

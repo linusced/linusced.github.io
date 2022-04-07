@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
 
     function closePopup() {
         projectPopup.classList.add("visibility-hidden")
-        projectPopupImages.querySelectorAll(".project-popup-image").forEach(img => projectPopupImages.removeChild(img));
+        projectPopupImages.querySelectorAll(".js-project-popup-image").forEach(img => projectPopupImages.removeChild(img));
         document.documentElement.style.overflowY = "";
         document.querySelectorAll("button, a").forEach(_button => _button.tabIndex = 0);
     }
@@ -37,11 +37,11 @@ window.addEventListener("load", () => {
             const isIframe = imageUrls[i].includes("youtube");
             const img = document.createElement(isIframe ? "iframe" : "img");
             img.src = imageUrls[i];
-            img.className = "project-popup-image";
+            img.className = "default-image-size js-project-popup-image";
 
             if (isIframe) {
                 img.setAttribute("frameborder", "0");
-                img.title = "Youtube video player";
+                img.title = "YouTube video player";
                 img.setAttribute("allow", "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
                 img.allowFullscreen = true;
             }

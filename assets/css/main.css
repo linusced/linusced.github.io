@@ -62,6 +62,14 @@
     color: var(--color-black);
 }
 
+.static-color-blue-1 {
+    color: var(--color-blue-1);
+}
+
+.static-color-blue-2 {
+    color: var(--color-blue-2);
+}
+
 :focus {
     outline: .2rem solid var(--color-white);
     outline-offset: .2rem;
