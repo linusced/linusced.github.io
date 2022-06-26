@@ -34,7 +34,6 @@ body {
     width: 100vw;
     min-height: 100%;
     overflow-x: hidden;
-    background-color: var(--bg-color);
 }
 
 .bg-image {
@@ -45,11 +44,6 @@ body {
     height: 100vh;
     background: url(../images/space/earthrise-planet.jpg) center/cover no-repeat;
     z-index: -2;
-}
-
-.bg-image.absolute {
-    position: absolute;
-    top: 100vh;
 }
 
 .fg-image {
@@ -97,6 +91,9 @@ body {
     align-items: center;
 }
 
+.hidden {
+    visibility: hidden !important;
+}
 
 .bg-color {
     background-color: var(--bg-color);
