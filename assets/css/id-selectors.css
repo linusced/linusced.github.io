@@ -1,9 +1,27 @@
-#mail {
-    transform: translateX(0);
-    transition: transform 0.5s linear;
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 1rem 2rem 1rem;
 }
 
-#mail-copy-notification {
+#main-nav-btns,
+#contact {
+    z-index: 2;
+}
+
+#email {
+    position: relative;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    z-index: 1;
+}
+
+#email.active {
+    transform: translateX(0);
+}
+
+#email-copy-notification {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -16,7 +34,152 @@
     transition: transform 0.3s;
 }
 
-#mail-copy-notification.active,
-#mail:hover #mail-copy-notification {
+#email-copy-notification.active,
+#email:hover #email-copy-notification,
+#email-copy-notification.touch {
     transform: translate(-50%, 0);
+}
+
+#email:not(.active) #email-copy-notification {
+    transform: translate(-50%, -100%);
+}
+
+#bg-moon-image {
+    background-position-x: right;
+    background-size: auto 200%;
+}
+
+@media (max-width: 1400px) {
+    #bg-moon-image {
+        background-size: auto 150%;
+    }
+}
+
+@media (max-width: 1000px),
+(min-width: 2500px) {
+    #bg-moon-image {
+        background-size: auto 100%;
+    }
+}
+
+
+@media (min-width: 651px) and (max-width: 1200px) {
+    #header {
+        padding-left: 0;
+    }
+
+    #navigation {
+        flex-direction: column;
+    }
+
+    #main-nav-btns {
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    #contact {
+        border-top-right-radius: 0;
+    }
+
+    #main-nav-btns>.default-btn:first-child,
+    #contact>.default-btn {
+        padding-left: 3rem;
+    }
+}
+
+@media (max-width: 650px) {
+    #header {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 3rem;
+        background: transparent;
+        transition: background 0.5s linear;
+    }
+
+    #header.nav-active {
+        background: var(--bg-color);
+    }
+
+    #navigation {
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        height: 100vh;
+        visibility: hidden;
+        opacity: 0;
+        background: var(--bg-color);
+        transition: opacity 0.5s linear, visibility 0.5s linear;
+    }
+
+    #header.nav-active #navigation {
+        visibility: visible;
+        opacity: 1;
+        overflow-y: auto;
+        padding-bottom: 0;
+    }
+
+    #navigation,
+    #main-nav-btns {
+        flex-direction: column;
+    }
+
+    #contact {
+        display: none;
+    }
+
+    #main-nav-btns,
+    #email>span {
+        border-radius: 0;
+    }
+
+    #main-nav-btns>.default-btn,
+    #email-btn,
+    #email-copy-notification {
+        text-align: left;
+        width: 100vw;
+        padding-left: 1rem;
+        padding-right: 0;
+    }
+
+    #email {
+        transform: translateX(0);
+        flex-direction: column;
+    }
+
+    #email-copy-notification {
+        transform: translate(0, 0) !important;
+        position: static;
+        border-radius: 0;
+    }
+
+    #nav-toggle {
+        position: relative;
+        display: block;
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+    }
+
+    #nav-toggle .fas {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s linear, visibility 0.5s linear;
+    }
+
+    #nav-toggle .fas.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #nav-toggle .fas:last-child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

@@ -21,11 +21,11 @@
     box-sizing: border-box;
     text-decoration: none;
     flex-shrink: 0;
-    font-family: Helvetica, sans-serif;
 }
 
 html {
     height: 100%;
+    font-family: Helvetica, sans-serif;
 }
 
 body {
@@ -36,59 +36,6 @@ body {
     width: 100vw;
     min-height: 100%;
     overflow-x: hidden;
-}
-
-div.bg-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url(../images/space/earthrise-planet.jpg) center/cover no-repeat;
-    z-index: -2;
-}
-
-body.bg-image {
-    background: url(../images/space/earthrise-planet.jpg) center/cover no-repeat;
-    background-attachment: fixed;
-}
-
-.fg-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 200vh;
-    background: url(../images/space/earthrise-moon.png) top right no-repeat;
-    background-size: auto 100%;
-    z-index: -1;
-}
-
-.bg-fg-images-size {
-    width: 100vw;
-    height: 200vh;
-}
-
-.behind-moon {
-    z-index: -2;
-}
-
-@media (max-width: 1400px) {
-    .fg-image {
-        background-position-x: calc(100% + 100px);
-    }
-}
-
-@media (max-width: 1000px) {
-    .fg-image {
-        background-position-x: calc(100% + 200px);
-    }
-}
-
-@media (max-width: 700px) {
-    .fg-image {
-        background-position-x: calc(100% + 350px);
-    }
 }
 
 .hidden {
@@ -167,10 +114,14 @@ span {
     display: flex;
 }
 
+.text-icon {
+    margin-right: 0.4rem;
+}
+
 .default-btn {
     color: var(--text-color);
     padding: .5rem 2rem;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
     cursor: pointer;
 }
 
@@ -184,4 +135,8 @@ span {
 
 .default-btn.active:hover {
     background: var(--bg-color-semi-transparent);
+}
+
+.z-1 {
+    z-index: 1;
 }

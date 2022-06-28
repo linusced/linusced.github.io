@@ -13,14 +13,22 @@
     justify-content: center;
 }
 
-.around {
+.space-around {
     justify-content: space-around;
 }
 
-.between {
+.space-between {
     justify-content: space-between;
 }
 
 .wrap {
     flex-wrap: wrap;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
 }
