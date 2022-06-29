@@ -51,10 +51,13 @@ window.addEventListener("load", () => {
 
     headerNavToggle.addEventListener("click", () => {
         if (header.classList.contains("nav-active")) {
+            header.classList.add("transition");
             header.classList.remove("nav-active");
             headerNavToggleIcons[0].classList.add("visible");
             headerNavToggleIcons[1].classList.remove("visible");
             document.body.style.overflow = "";
+
+            setTimeout(() => header.classList.remove("transition"), 500);
         }
         else {
             header.classList.add("nav-active");
@@ -97,11 +100,7 @@ window.addEventListener("load", () => {
         navHeight = headerNavToggle.getBoundingClientRect().height
 
         if (navHeight != 0) {
-            if (!mobileViewTransition) {
-                mobileViewTransition = true;
-                header.style.transition = navigation.style.transition = "none";
-                setTimeout(() => header.style.transition = navigation.style.transition = "", 10);
-            }
+            mobileViewTransition = true;
         }
         else if (mobileViewTransition) {
             mobileViewTransition = false;
