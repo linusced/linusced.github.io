@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./assets/css/default.css">
     <link rel="stylesheet" href="./assets/css/sizing.css">
     <link rel="stylesheet" href="./assets/css/flex.css">
-    <link rel="stylesheet" href="./assets/css/id-selectors.css">
+    <link rel="stylesheet" href="./assets/css/specific-selectors.css">
     <link rel="stylesheet" href="./assets/css/images.css">
 
     <script src="./assets/js/default.js"></script>
@@ -27,89 +27,56 @@
     <div class="page-bg-image" style="background-image: url(./assets/images/space/earthrise-planet.jpg);"></div>
     <div class="page-bg-image js-scroll-effect" data-scroll-multiplier-x="0.1" id="bg-moon-image"
         style="background-image: url(./assets/images/space/earthrise-moon.png);"></div>
+
     <div class="container z-1">
-        <div class="container width-100 row space-between bg-color-semi-transparent-dark" id="header">
+        <header class="container width-100 row space-between" id="header">
             <button class="default-btn hidden" id="nav-toggle" title="Toggle navigation">
                 <i class="fas fa-bars visible"></i><i class="fas fa-times"></i></button>
-            <div class="container row align-start" id="navigation">
-                <span class="bg-color round-border-left" id="main-nav-btns">
+            <nav class="container row align-start" id="navigation">
+                <span class="flex bg-color round-border-left" id="main-nav-btns">
                     <a href="./" class="default-btn active" title="Homepage">Home</a>
                     <a href="./3d-graphics" class="default-btn" title="3D Graphics">3D Graphics</a>
                     <a href="https://github.com/linusced/" target="_blank" class="default-btn" title="GitHub"><i
                             class="fab fa-github text-icon"></i>GitHub</a>
                 </span>
-                <span> <span class="bg-color invert-colors round-border-right" id="contact">
+                <span class="flex">
+                    <span class="flex bg-color invert-colors round-border-right" id="contact">
                         <button class="default-btn" id="contact-btn" title="Contact">Contact</button>
                     </span>
-                    <span id="email">
-                        <span class="bg-color invert-colors round-border-right">
+                    <span class="flex" id="email">
+                        <span class="flex bg-color invert-colors round-border-right">
                             <button class="default-btn" id="email-btn" title="Copy email"
                                 data-email="linuscedergren@gmail.com">linuscedergren@gmail.com</button>
                         </span>
                         <h3 id="email-copy-notification" class="round-border-bottom">Click to copy email adress!</h3>
                     </span>
                 </span>
+            </nav>
+        </header>
+        <section class="container">
+            <div class="project">
+                <div class="project-images invert-colors">
+                    <img src="./assets/images/project-images/audio-analyser_1.jpg">
+                    <div class="project-images-control">
+                        <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
+                        <h1>Audio Analyzer</h1>
+                        <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-text">
+                    <h2>Tags:</h2>
+                    <p>lorem, ipsum, hello, world</p>
+                    <h2>Description:</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sit in eveniet facere
+                        voluptatum quaerat eligendi cumque aliquam unde officia vero veritatis doloremque, maiores
+                        blanditiis libero eum a molestiae quo modi consequatur magnam voluptates dignissimos omnis
+                        rem? Dicta minus itaque ipsa deserunt laboriosam enim velit voluptatum veniam, labore ad
+                        aspernatur commodi asperiores eius repellendus eaque nemo dolorem amet quam? Quaerat dolorum
+                        reiciendis molestias a! Rerum, voluptates deleniti quas adipisci rem est, aut possimus totam
+                        non harum vitae repellat, recusandae ut.</p>
+                </div>
             </div>
-        </div>
-        <div class="container padding-horizontal-3">
-            <p class="text-color">Hello, World!<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                aperiam
-                deleniti repellendus hic, nisi iusto rerum saepe odio consectetur illum corporis id beatae soluta
-                tempore quos dolorum nam exercitationem. Atque magni adipisci voluptatibus corporis aperiam vitae
-                similique tempore in, quaerat officia soluta dicta numquam quo, provident reprehenderit animi, quos
-                ea.
-                Aliquam corrupti porro officia eligendi optio placeat fugit illo ex ut dolor enim molestias, tenetur
-                id
-                vero saepe magni expedita odit, eius libero dolores officiis laboriosam maxime? Quas placeat
-                recusandae
-                veritatis mollitia eius vero ad commodi ullam. Excepturi illo a quaerat eius quisquam ipsum repellat
-                autem debitis, neque optio obcaecati facilis nulla. Repudiandae veniam veritatis reprehenderit omnis
-                amet at illum tenetur vitae temporibus iusto obcaecati, odit officiis alias aliquam, eum aliquid
-                labore
-                sunt sed! Iusto, voluptatibus sed, ad voluptas deleniti ipsam eius totam quia minus sit cum dolorem
-                perspiciatis fugit architecto veritatis, ab recusandae adipisci facilis fuga autem! Nostrum
-                necessitatibus adipisci molestiae repudiandae ab quibusdam qui eius quisquam et odit non mollitia
-                fuga
-                rerum illum quo recusandae deserunt minima vero nam est nisi dolores, blanditiis fugit quia. Porro
-                exercitationem non voluptatem, est libero quo harum consequatur dolor fugit id nostrum! Itaque eum
-                eos
-                accusamus architecto aut repellendus impedit nisi? Asperiores!</p>
-        </div>
-        <div class="container padding-horizontal-3">
-            <p class="text-color" style="margin-top: 50vh">Hello, World!<br>Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Ipsam aperiam
-                deleniti repellendus hic, nisi iusto rerum saepe odio consectetur illum corporis id beatae soluta
-                tempore quos dolorum nam exercitationem. Atque magni adipisci voluptatibus corporis aperiam vitae
-                similique tempore in, quaerat officia soluta dicta numquam quo, provident reprehenderit animi, quos ea.
-                Aliquam corrupti porro officia eligendi optio placeat fugit illo ex ut dolor enim molestias, tenetur id
-                vero saepe magni expedita odit, eius libero dolores officiis laboriosam maxime? Quas placeat recusandae
-                veritatis mollitia eius vero ad commodi ullam. Excepturi illo a quaerat eius quisquam ipsum repellat
-                autem debitis, neque optio obcaecati facilis nulla. Repudiandae veniam veritatis reprehenderit omnis
-                amet at illum tenetur vitae temporibus iusto obcaecati, odit officiis alias aliquam, eum aliquid labore
-                sunt sed! Iusto, voluptatibus sed, ad voluptas deleniti ipsam eius totam quia minus sit cum dolorem
-                perspiciatis fugit architecto veritatis, ab recusandae adipisci facilis fuga autem! Nostrum
-                necessitatibus adipisci molestiae repudiandae ab quibusdam qui eius quisquam et odit non mollitia fuga
-                rerum illum quo recusandae deserunt minima vero nam est nisi dolores, blanditiis fugit quia. Porro
-                exercitationem non voluptatem, est libero quo harum consequatur dolor fugit id nostrum! Itaque eum eos
-                accusamus architecto aut repellendus impedit nisi? Asperiores!</p>
-
-            <p class="text-color" style="margin-top: 50vh">Hello, World!<br>Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Ipsam aperiam
-                deleniti repellendus hic, nisi iusto rerum saepe odio consectetur illum corporis id beatae soluta
-                tempore quos dolorum nam exercitationem. Atque magni adipisci voluptatibus corporis aperiam vitae
-                similique tempore in, quaerat officia soluta dicta numquam quo, provident reprehenderit animi, quos ea.
-                Aliquam corrupti porro officia eligendi optio placeat fugit illo ex ut dolor enim molestias, tenetur id
-                vero saepe magni expedita odit, eius libero dolores officiis laboriosam maxime? Quas placeat recusandae
-                veritatis mollitia eius vero ad commodi ullam. Excepturi illo a quaerat eius quisquam ipsum repellat
-                autem debitis, neque optio obcaecati facilis nulla. Repudiandae veniam veritatis reprehenderit omnis
-                amet at illum tenetur vitae temporibus iusto obcaecati, odit officiis alias aliquam, eum aliquid labore
-                sunt sed! Iusto, voluptatibus sed, ad voluptas deleniti ipsam eius totam quia minus sit cum dolorem
-                perspiciatis fugit architecto veritatis, ab recusandae adipisci facilis fuga autem! Nostrum
-                necessitatibus adipisci molestiae repudiandae ab quibusdam qui eius quisquam et odit non mollitia fuga
-                rerum illum quo recusandae deserunt minima vero nam est nisi dolores, blanditiis fugit quia. Porro
-                exercitationem non voluptatem, est libero quo harum consequatur dolor fugit id nostrum! Itaque eum eos
-                accusamus architecto aut repellendus impedit nisi? Asperiores!</p>
-        </div>
+        </section>
     </div>
 </body>
 

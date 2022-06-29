@@ -1,5 +1,5 @@
 var resizeTimeout = null;
-var resizeCallbacks = [];
+var resizeCallbacks = [], instantResizeCallbacks = [];
 
 window.addEventListener("load", () => {
     const buttons = document.querySelectorAll("button, a");
@@ -15,4 +15,6 @@ window.addEventListener("resize", () => {
     resizeTimeout = setTimeout(() => {
         resizeCallbacks.forEach(callback => callback());
     }, 100);
+
+    instantResizeCallbacks.forEach(callback => callback());
 });

@@ -1,14 +1,8 @@
 window.addEventListener("load", () => {
-    const header = document.querySelector("#header"),
+    const header = document.querySelector("#header"), navigation = document.querySelector("#navigation"),
         headerStaticHeightCopy = document.createElement("div");
 
     header.parentElement.insertBefore(headerStaticHeightCopy, header);
-    headerResize();
-
-    resizeCallbacks.push(headerResize);
-    function headerResize() {
-        headerStaticHeightCopy.style = "width: 100%; height: " + header.getBoundingClientRect().height + "px;";
-    }
 
     const contact = document.querySelector("#contact"),
         contactBtn = document.querySelector("#contact-btn"),
@@ -69,4 +63,53 @@ window.addEventListener("load", () => {
             document.body.style.overflow = "hidden";
         }
     });
+
+    var mobileViewTransition = false;
+    var navHeight;
+
+    resizeCallbacks.push(headerResize);
+
+    function headerResize() {
+        var headerHeight = header.getBoundingClientRect().height;
+
+        if (navHeight != 0) {
+            headerHeight = navHeight + parseInt(window.getComputedStyle(header).paddingBottom);
+
+            if (email.classList.contains("active")) {
+                contactBtn.classList.remove("active");
+                email.classList.remove("active");
+                contact.classList.add("round-border-right");
+            }
+        }
+        else if (header.classList.contains("nav-active")) {
+            header.classList.remove("nav-active");
+            headerNavToggleIcons[0].classList.add("visible");
+            headerNavToggleIcons[1].classList.remove("visible");
+            document.body.style.overflow = "";
+        }
+
+        headerStaticHeightCopy.style = "width: 100%; height: " + headerHeight + "px;";
+    }
+
+    instantResizeCallbacks.push(headerResizeInstant);
+
+    function headerResizeInstant() {
+        navHeight = headerNavToggle.getBoundingClientRect().height
+
+        if (navHeight != 0) {
+            if (!mobileViewTransition) {
+                mobileViewTransition = true;
+                header.style.transition = navigation.style.transition = "none";
+                setTimeout(() => header.style.transition = navigation.style.transition = "", 10);
+            }
+        }
+        else if (mobileViewTransition) {
+            mobileViewTransition = false;
+            email.style.transition = emailCopyNotification.style.transition = "none";
+            setTimeout(() => email.style.transition = emailCopyNotification.style.transition = "", 10);
+        }
+    }
+
+    headerResizeInstant();
+    headerResize();
 });

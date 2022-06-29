@@ -1,8 +1,12 @@
+.flex {
+    display: flex;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .row {
@@ -31,4 +35,8 @@
 
 .align-end {
     align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
 }
