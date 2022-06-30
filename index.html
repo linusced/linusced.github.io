@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./assets/css/default.css">
     <link rel="stylesheet" href="./assets/css/sizing.css">
     <link rel="stylesheet" href="./assets/css/flex.css">
-    <link rel="stylesheet" href="./assets/css/specific-selectors.css">
     <link rel="stylesheet" href="./assets/css/images.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/projects.css">
 
     <script src="./assets/js/default.js"></script>
     <script src="./assets/js/header.js"></script>
@@ -50,15 +51,17 @@
                             <button class="default-btn" id="email-btn" title="Copy email"
                                 data-email="linuscedergren@gmail.com">linuscedergren@gmail.com</button>
                         </span>
-                        <h3 id="email-copy-notification" class="round-border-bottom">Click to copy email adress!</h3>
+                        <h3 id="email-copy-notification" class="round-border-bottom">Click to copy email adress!<i
+                                class="fas fa-arrow-up padding-left"></i></h3>
                     </span>
                 </span>
             </nav>
         </header>
+
         <!--  C++ projects -->
-        <section class="container projects-section round-border-right" id="cpp-projects">
-            <!-- Audio Visualizer -->
+        <section class="projects-section round-border-right" id="cpp-projects">
             <h1 class="projects-section-title invert-colors">C++ Projects</h1>
+            <!-- Audio Visualizer -->
             <div class="project">
                 <div class="project-images invert-colors js-project-images">
                     <img src="./assets/images/project-images/audio_visualizer_1.jpg" alt="Audio Visualizer"
@@ -68,8 +71,10 @@
                         <h1>Audio Visualizer</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
+                    <button class="default-btn project-content-toggle js-project-content-toggle"><i
+                            class="fas fa-caret-down"></i>View Info<i class="fas fa-caret-down"></i></button>
                 </div>
-                <div class="project-content">
+                <div class="project-content js-project-content">
                     <div class="project-text">
                         <h2>Tags:</h2>
                         <p>C++, OpenGL, OpenAL</p>
@@ -80,11 +85,11 @@
                             Terminal (console) when running the app executable file.</p>
                         <p>It uses OpenGL for graphics and OpenAL for the microphone audio input.</p>
                     </div>
-                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                    <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/audio_visualizer/" target="_blank" class="default-btn"
                             title="Audio Visualizer Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
                         <a href="#" target="_blank" class="default-btn"
-                            title="Audio Visualizer Download (Mac only)">Download (Mac only)</a>
+                            title="Audio Visualizer Download (MacOS)">Download (MacOS)</a>
                     </div>
                 </div>
             </div>
@@ -98,8 +103,10 @@
                         <h1>Poker AI</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
+                    <button class="default-btn project-content-toggle js-project-content-toggle"><i
+                            class="fas fa-caret-down"></i>View Info<i class="fas fa-caret-down"></i></button>
                 </div>
-                <div class="project-content">
+                <div class="project-content js-project-content">
                     <div class="project-text">
                         <h2>Tags:</h2>
                         <p>C++, OpenGL</p>
@@ -111,11 +118,11 @@
                             highest and lowest possible cards currently are. I haven't worked on this project in a long
                             time.</p>
                     </div>
-                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                    <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/poker_ai/" target="_blank" class="default-btn"
                             title="Poker AI Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
-                        <a href="#" target="_blank" class="default-btn" title="Poker AI Download (Mac only)">Download
-                            (Mac only)</a>
+                        <a href="#" target="_blank" class="default-btn" title="Poker AI Download (MacOS)">Download
+                            (MacOS)</a>
                     </div>
                 </div>
             </div>
@@ -132,8 +139,10 @@
                         <h1>Audio Synthesizer</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
+                    <button class="default-btn project-content-toggle js-project-content-toggle"><i
+                            class="fas fa-caret-down"></i>View Info<i class="fas fa-caret-down"></i></button>
                 </div>
-                <div class="project-content">
+                <div class="project-content js-project-content">
                     <div class="project-text">
                         <h2>Tags:</h2>
                         <p>C++, OpenGL, OpenAL, RtMidi, FFTW, TinyExpr</p>
@@ -146,19 +155,19 @@
                             support and TinyExpr for simple math operations for the user input of waveform harmonics
                             ampltude and phase.</p>
                     </div>
-                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                    <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/audio_synthesizer/" target="_blank" class="default-btn"
                             title="Audio Synthesizer Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
                         <a href="#" target="_blank" class="default-btn"
-                            title="Audio Synthesizer Download (Mac only)">Download (Mac only)</a>
+                            title="Audio Synthesizer Download (MacOS)">Download (MacOS)</a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Front end web projects -->
         <section class="container projects-section round-border-right" id="web-projects">
-            <!-- Audio Analyser -->
             <h1 class="projects-section-title invert-colors">Front End Web Projects</h1>
+            <!-- Audio Analyser -->
             <div class="project">
                 <div class="project-images invert-colors js-project-images">
                     <img src="./assets/images/project-images/audio-analyser_1.jpg" alt="Audio Analyser"
@@ -168,8 +177,10 @@
                         <h1>Audio Analyser</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
+                    <button class="default-btn project-content-toggle js-project-content-toggle"><i
+                            class="fas fa-caret-down"></i>View Info<i class="fas fa-caret-down"></i></button>
                 </div>
-                <div class="project-content">
+                <div class="project-content js-project-content">
                     <div class="project-text">
                         <h2>Tags:</h2>
                         <p>HTML, CSS, JavaScript, Chrome Extension</p>
@@ -180,7 +191,7 @@
                         <p>This extension allows you to analyze the audio data of a tab and view a visualization of the
                             audio frequencies and peak/rms in an extension popup window.</p>
                     </div>
-                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                    <div class="project-buttons invert-colors">
                         <a href="https://chrome.google.com/webstore/detail/audio-analyser-extension/jijcfbjaabelgalioonccjkekpegoegb?hl=sv&authuser=1"
                             target="_blank" class="default-btn" title="Audio Analyser Chrome Extension">Go To
                             Chrome Extension</a>
@@ -197,8 +208,10 @@
                         <h1>Audio Events</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
+                    <button class="default-btn project-content-toggle js-project-content-toggle"><i
+                            class="fas fa-caret-down"></i>View Info<i class="fas fa-caret-down"></i></button>
                 </div>
-                <div class="project-content">
+                <div class="project-content js-project-content">
                     <div class="project-text">
                         <h2>Tags:</h2>
                         <p>HTML, CSS, JavaScript</p>
@@ -210,7 +223,7 @@
                             box or to the right of it. And you can manually change the keyframes in the "Selected Event"
                             area in the bottom of the page.</p>
                     </div>
-                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                    <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/audio_events/" target="_blank" class="default-btn"
                             title="Audio Events Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
                         <a href="https://linusced.github.io/audio-events/" target="_blank" class="default-btn"
@@ -228,15 +241,17 @@
                         <h1>Old Music Website</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
+                    <button class="default-btn project-content-toggle js-project-content-toggle"><i
+                            class="fas fa-caret-down"></i>View Info<i class="fas fa-caret-down"></i></button>
                 </div>
-                <div class="project-content">
+                <div class="project-content js-project-content">
                     <div class="project-text">
                         <h2>Tags:</h2>
                         <p>HTML, CSS, JavaScript</p>
                         <h2>Description:</h2>
                         <p>An old music website where I used to upload my music to in the first half of 2021.</p>
                     </div>
-                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                    <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/old-music-website/" target="_blank" class="default-btn"
                             title="Old Music Website Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
                         <a href="https://linusced.github.io/old-music-website/" target="_blank" class="default-btn"
@@ -247,8 +262,8 @@
         </section>
         <!-- Professional websites -->
         <section class="container projects-section round-border-right" id="professional-websites">
-            <!-- Vingården -->
             <h1 class="projects-section-title invert-colors">Professional Websites</h1>
+            <!-- Vingården -->
             <div class="project">
                 <div class="project-images invert-colors js-project-images">
                     <img src="./assets/images/project-images/vingarden_1.jpg" alt="Vingården"
@@ -258,8 +273,10 @@
                         <h1>Vingården</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
+                    <button class="default-btn project-content-toggle js-project-content-toggle"><i
+                            class="fas fa-caret-down"></i>View Info<i class="fas fa-caret-down"></i></button>
                 </div>
-                <div class="project-content">
+                <div class="project-content js-project-content">
                     <div class="project-text">
                         <h2>Tags:</h2>
                         <p>HTML, CSS, JavaScript</p>
@@ -267,7 +284,7 @@
                         <p>A static website I made for a Bed & Breakfast and Airbnb place in Sweden. There is an english
                             translation available on the website so that anyone can view it and understand the text.</p>
                     </div>
-                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                    <div class="project-buttons invert-colors">
                         <a href="https://vingarden.eu" target="_blank" class="default-btn" title="Old Music Website">Go
                             To Website</a>
                     </div>

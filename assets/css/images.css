@@ -1,3 +1,21 @@
+#bg-moon-image {
+    background-position-x: right;
+    background-size: auto 200%;
+}
+
+@media (max-width: 1400px) {
+    #bg-moon-image {
+        background-size: auto 150%;
+    }
+}
+
+@media (max-width: 1000px),
+(min-width: 2500px) {
+    #bg-moon-image {
+        background-size: auto 100%;
+    }
+}
+
 .page-bg-image {
     position: fixed;
     top: 0;

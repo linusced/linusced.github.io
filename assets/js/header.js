@@ -47,11 +47,11 @@ window.addEventListener("load", () => {
         clearTimeout(emailCopyNotificationTimeout);
 
         emailCopyNotification.classList.add("active");
-        emailCopyNotification.textContent = "Email adress copied to clipboard!";
+        emailCopyNotification.innerHTML = "Email adress copied to clipboard!";
 
         emailCopyNotificationTimeout = setTimeout(() => {
             emailCopyNotification.classList.remove("active");
-            emailCopyNotification.textContent = "Click to copy email adress!";
+            emailCopyNotification.innerHTML = "Click to copy email adress!<i class=\"fas fa-arrow-up padding-left\"></i>";
         }, 2000);
     });
 

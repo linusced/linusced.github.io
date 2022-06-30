@@ -1,4 +1,46 @@
 window.addEventListener("load", () => {
+    const projectContentToggle = document.querySelectorAll(".js-project-content-toggle"),
+        projectContent = document.querySelectorAll(".js-project-content");
+
+    for (let i = 0; i < projectContentToggle.length; i++) {
+        projectContentToggle[i].setAttribute("data-project-index", i);
+        projectContentToggle[i].addEventListener("click", toggleContent);
+    }
+
+    function toggleContent(e) {
+        let projectIndex = e.target.getAttribute("data-project-index");
+        if (!projectIndex) projectIndex = e.target.parentElement.getAttribute("data-project-index");
+        projectIndex = parseInt(projectIndex);
+
+        projectContentToggle[projectIndex].classList.toggle("active");
+
+        var timeout = parseInt(projectContent[projectIndex].getAttribute("data-timeout"));
+        clearTimeout(timeout);
+
+        projectContent[projectIndex].style = "display:flex;height:auto;";
+        const height = projectContent[projectIndex].getBoundingClientRect().height;
+        projectContent[projectIndex].style = "";
+
+        if (projectContentToggle[projectIndex].classList.contains("active")) {
+            projectContent[projectIndex].classList.add("active");
+            setTimeout(() => projectContent[projectIndex].style.height = height + "px", 10);
+            timeout = setTimeout(() => {
+                projectContent[projectIndex].style.height = "auto";
+                projectContentToggle[projectIndex].innerHTML = projectContentToggle[projectIndex].innerHTML.replace("View", "Hide");
+            }, 510);
+        }
+        else {
+            projectContent[projectIndex].style.height = height + "px";
+            setTimeout(() => projectContent[projectIndex].style.height = "", 10);
+            timeout = setTimeout(() => {
+                projectContent[projectIndex].classList.remove("active");
+                projectContentToggle[projectIndex].innerHTML = projectContentToggle[projectIndex].innerHTML.replace("Hide", "View");
+            }, 510);
+        }
+
+        projectContent[projectIndex].setAttribute("data-timeout", timeout);
+    }
+
     const projectImages = document.querySelectorAll(".js-project-images");
 
     for (let i = 0; i < projectImages.length; i++) {
@@ -49,6 +91,8 @@ window.addEventListener("load", () => {
 
         timeout = setTimeout(() => {
             if (imgSources[newIndex].substring(0, 30) == "https://www.youtube.com/embed/") {
+                iframe.width = img.getBoundingClientRect().width;
+                iframe.height = img.getBoundingClientRect().height;
                 img.classList.add("hidden");
                 iframe.src = imgSources[newIndex];
             }
