@@ -4,6 +4,7 @@
     --text-color-blue: #60ddff;
     --bg-color-blue: #178ddb;
     --bg-color-semi-transparent: #fff5;
+    --bg-color-semi-transparent-image-overlay: #0008;
     --bg-color-green: #0a0;
 }
 
@@ -120,7 +121,12 @@ button {
     cursor: pointer;
 }
 
-.default-btn:hover {
+.default-btn:focus {
+    outline-offset: -0.4rem;
+}
+
+.default-btn:hover,
+.default-btn:focus {
     background: var(--bg-color-blue);
 }
 
@@ -128,7 +134,8 @@ button {
     color: var(--text-color-blue);
 }
 
-.default-btn.active:hover {
+.default-btn.active:hover,
+.default-btn.active:focus {
     background: var(--bg-color-semi-transparent);
 }
 

@@ -19,6 +19,7 @@
     <script src="./assets/js/default.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/scroll.js"></script>
+    <script src="./assets/js/projects.js"></script>
 
     <title>Linusced</title>
 </head>
@@ -28,9 +29,9 @@
     <div class="page-bg-image js-scroll-effect" data-scroll-multiplier-x="0.1" id="bg-moon-image"
         style="background-image: url(./assets/images/space/earthrise-moon.png);"></div>
 
-    <div class="container z-1">
-        <header class="container width-100 row space-between" id="header">
-            <button class="default-btn hidden" id="nav-toggle" title="Toggle navigation">
+    <div class="container z-1 width-100vw overflow-hidden">
+        <header class="container row space-between" id="header">
+            <button class="default-btn bg-color hidden" id="nav-toggle" title="Toggle navigation">
                 <i class="fas fa-bars visible"></i><i class="fas fa-times"></i></button>
             <nav class="container row align-start" id="navigation">
                 <span class="flex bg-color round-border-left" id="main-nav-btns">
@@ -43,7 +44,7 @@
                     <span class="flex bg-color invert-colors round-border-right" id="contact">
                         <button class="default-btn" id="contact-btn" title="Contact">Contact</button>
                     </span>
-                    <span class="flex" id="email">
+                    <span class="flex hidden" id="email">
                         <span class="flex bg-color invert-colors round-border-right">
                             <button class="default-btn" id="email-btn" title="Copy email"
                                 data-email="linuscedergren@gmail.com">linuscedergren@gmail.com</button>
@@ -53,27 +54,222 @@
                 </span>
             </nav>
         </header>
-        <section class="container width-100vw">
+        <!--  C++ projects -->
+        <section class="container projects-section round-border-right" id="cpp-projects">
+            <!-- Audio Visualizer -->
+            <h1 class="projects-section-title invert-colors">C++ Projects</h1>
             <div class="project">
-                <div class="project-images invert-colors">
-                    <img src="./assets/images/project-images/audio-analyser_1.jpg">
+                <div class="project-images invert-colors js-project-images">
+                    <img src="./assets/images/project-images/audio_visualizer_1.jpg" alt="Audio Visualizer"
+                        data-sources="./assets/images/project-images/audio_visualizer_1.jpg ./assets/images/project-images/audio_visualizer_2.jpg ./assets/images/project-images/audio_visualizer_3.jpg">
+                    <div class="project-images-control">
+                        <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
+                        <h1>Audio Visualizer</h1>
+                        <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>Tags:</h2>
+                        <p>C++, OpenGL, OpenAL</p>
+                        <h2>Description:</h2>
+                        <p>A simple program which draws an audio waveform on the screen. It uses the computers
+                            microphone to
+                            get an audio buffer. The background images, colors and text-content can be changed through
+                            Terminal (console) when running the app executable file.</p>
+                        <p>It uses OpenGL for graphics and OpenAL for the microphone audio input.</p>
+                    </div>
+                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                        <a href="https://github.com/linusced/audio_visualizer/" target="_blank" class="default-btn"
+                            title="Audio Visualizer Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
+                        <a href="#" target="_blank" class="default-btn"
+                            title="Audio Visualizer Download (Mac only)">Download (Mac only)</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Poker AI -->
+            <div class="project">
+                <div class="project-images invert-colors js-project-images">
+                    <img src="./assets/images/project-images/poker_ai_1.jpg" alt="Poker AI"
+                        data-sources="./assets/images/project-images/poker_ai_1.jpg ./assets/images/project-images/poker_ai_2.jpg ./assets/images/project-images/poker_ai_3.jpg ./assets/images/project-images/poker_ai_4.jpg ./assets/images/project-images/poker_ai_5.jpg ./assets/images/project-images/poker_ai_6.jpg">
+                    <div class="project-images-control">
+                        <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
+                        <h1>Poker AI</h1>
+                        <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>Tags:</h2>
+                        <p>C++, OpenGL</p>
+                        <h2>Description:</h2>
+                        <p>This was a Poker program where the focus was to create an AI (bot) which you can play Texas
+                            Hold'em Poker against.</p>
+                        <p>It currently only has a simple AI which only acts based on the cards that it's given and what
+                            the
+                            highest and lowest possible cards currently are. I haven't worked on this project in a long
+                            time.</p>
+                    </div>
+                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                        <a href="https://github.com/linusced/poker_ai/" target="_blank" class="default-btn"
+                            title="Poker AI Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
+                        <a href="#" target="_blank" class="default-btn" title="Poker AI Download (Mac only)">Download
+                            (Mac only)</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Audio Synthesizer -->
+            <div class="project">
+                <div class="project-images invert-colors js-project-images">
+                    <img src="./assets/images/project-images/audio_synthesizer_1.jpg" alt="Audio Synthesizer"
+                        data-sources="./assets/images/project-images/audio_synthesizer_1.jpg https://www.youtube.com/embed/jSLihF28EPg ./assets/images/project-images/audio_synthesizer_2.jpg ./assets/images/project-images/audio_synthesizer_3.jpg ./assets/images/project-images/audio_synthesizer_4.jpg ./assets/images/project-images/audio_synthesizer_5.jpg">
+                    <iframe src="#" frameborder="0" title="YouTube video player"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                    <div class="project-images-control">
+                        <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
+                        <h1>Audio Synthesizer</h1>
+                        <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>Tags:</h2>
+                        <p>C++, OpenGL, OpenAL, RtMidi, FFTW, TinyExpr</p>
+                        <h2>Description:</h2>
+                        <p>A simple program for audio synthesis. You can create waveforms by using up to 51 harmonics
+                            and
+                            you can modify the ADSR envelope for your sound. You can play your sound using the computer
+                            keyboard or an external MIDI device.</p>
+                        <p>It uses OpenGL for graphics, OpenAL for audio, FFTW for frequency analysis, RtMidi for MIDI
+                            support and TinyExpr for simple math operations for the user input of waveform harmonics
+                            ampltude and phase.</p>
+                    </div>
+                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                        <a href="https://github.com/linusced/audio_synthesizer/" target="_blank" class="default-btn"
+                            title="Audio Synthesizer Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
+                        <a href="#" target="_blank" class="default-btn"
+                            title="Audio Synthesizer Download (Mac only)">Download (Mac only)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Front end web projects -->
+        <section class="container projects-section round-border-right" id="web-projects">
+            <!-- Audio Analyser -->
+            <h1 class="projects-section-title invert-colors">Front End Web Projects</h1>
+            <div class="project">
+                <div class="project-images invert-colors js-project-images">
+                    <img src="./assets/images/project-images/audio-analyser_1.jpg" alt="Audio Analyser"
+                        data-sources="./assets/images/project-images/audio-analyser_1.jpg ./assets/images/project-images/audio-analyser_2.jpg ./assets/images/project-images/audio-analyser_3.jpg">
+                    <div class="project-images-control">
+                        <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
+                        <h1>Audio Analyser</h1>
+                        <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>Tags:</h2>
+                        <p>HTML, CSS, JavaScript, Chrome Extension</p>
+                        <h2>Description:</h2>
+                        <p>This is a Google Chrome extension for analysing the audio data of a Chrome tab. You can find
+                            it on the link below.</p>
+                        <p>Description from Chrome Webstore:</p>
+                        <p>This extension allows you to analyze the audio data of a tab and view a visualization of the
+                            audio frequencies and peak/rms in an extension popup window.</p>
+                    </div>
+                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                        <a href="https://chrome.google.com/webstore/detail/audio-analyser-extension/jijcfbjaabelgalioonccjkekpegoegb?hl=sv&authuser=1"
+                            target="_blank" class="default-btn" title="Audio Analyser Chrome Extension">Go To
+                            Chrome Extension</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Audio Events -->
+            <div class="project">
+                <div class="project-images invert-colors js-project-images">
+                    <img src="./assets/images/project-images/audio-events_1.jpg" alt="Audio Events"
+                        data-sources="./assets/images/project-images/audio-events_1.jpg ./assets/images/project-images/audio-events_2.jpg ./assets/images/project-images/audio-events_3.jpg">
+                    <div class="project-images-control">
+                        <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
+                        <h1>Audio Events</h1>
+                        <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>Tags:</h2>
+                        <p>HTML, CSS, JavaScript</p>
+                        <h2>Description:</h2>
+                        <p>This is an old project which was used to create the JSON audio events data for
+                            [old-music-website].</p>
+                        <p>You can create an "audio event" by right-clicking in the empty area below the red and green
+                            audio waveforms. You can add new keyframes to your event bli left-clicking inside the event
+                            box or to the right of it. And you can manually change the keyframes in the "Selected Event"
+                            area in the bottom of the page.</p>
+                    </div>
+                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                        <a href="https://github.com/linusced/audio_events/" target="_blank" class="default-btn"
+                            title="Audio Events Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
+                        <a href="https://linusced.github.io/audio-events/" target="_blank" class="default-btn"
+                            title="Audio Events Website">Go To Website</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Old Music Website -->
+            <div class="project">
+                <div class="project-images invert-colors js-project-images">
+                    <img src="./assets/images/project-images/old-music-website_1.jpg" alt="Old Music Website"
+                        data-sources="./assets/images/project-images/old-music-website_1.jpg ./assets/images/project-images/old-music-website_2.jpg ./assets/images/project-images/old-music-website_3.jpg">
                     <div class="project-images-control">
                         <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
                         <h1>Old Music Website</h1>
                         <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
                     </div>
                 </div>
-                <div class="project-text">
-                    <h2>Tags:</h2>
-                    <p>lorem, ipsum, hello, world</p>
-                    <h2>Description:</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sit in eveniet facere
-                        voluptatum quaerat eligendi cumque aliquam unde officia vero veritatis doloremque, maiores
-                        blanditiis libero eum a molestiae quo modi consequatur magnam voluptates dignissimos omnis
-                        rem? Dicta minus itaque ipsa deserunt laboriosam enim velit voluptatum veniam, labore ad
-                        aspernatur commodi asperiores eius repellendus eaque nemo dolorem amet quam? Quaerat dolorum
-                        reiciendis molestias a! Rerum, voluptates deleniti quas adipisci rem est, aut possimus totam
-                        non harum vitae repellat, recusandae ut.</p>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>Tags:</h2>
+                        <p>HTML, CSS, JavaScript</p>
+                        <h2>Description:</h2>
+                        <p>An old music website where I used to upload my music to in the first half of 2021.</p>
+                    </div>
+                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                        <a href="https://github.com/linusced/old-music-website/" target="_blank" class="default-btn"
+                            title="Old Music Website Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
+                        <a href="https://linusced.github.io/old-music-website/" target="_blank" class="default-btn"
+                            title="Old Music Website">Go To Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Professional websites -->
+        <section class="container projects-section round-border-right" id="professional-websites">
+            <!-- Vingården -->
+            <h1 class="projects-section-title invert-colors">Professional Websites</h1>
+            <div class="project">
+                <div class="project-images invert-colors js-project-images">
+                    <img src="./assets/images/project-images/vingarden_1.jpg" alt="Vingården"
+                        data-sources="./assets/images/project-images/vingarden_1.jpg ./assets/images/project-images/vingarden_2.jpg ./assets/images/project-images/vingarden_3.jpg ./assets/images/project-images/vingarden_4.jpg ./assets/images/project-images/vingarden_5.jpg">
+                    <div class="project-images-control">
+                        <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
+                        <h1>Vingården</h1>
+                        <button class="default-btn js-project-images-next"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>Tags:</h2>
+                        <p>HTML, CSS, JavaScript</p>
+                        <h2>Description:</h2>
+                        <p>A static website I made for a Bed & Breakfast and Airbnb place in Sweden. There is an english
+                            translation available on the website so that anyone can view it and understand the text.</p>
+                    </div>
+                    <div class="container row margin-vertical-1 bg-color round-border invert-colors project-buttons">
+                        <a href="https://vingarden.eu" target="_blank" class="default-btn" title="Old Music Website">Go
+                            To Website</a>
+                    </div>
                 </div>
             </div>
         </section>

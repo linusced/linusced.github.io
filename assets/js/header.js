@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-    const header = document.querySelector("#header"), navigation = document.querySelector("#navigation"),
+    const header = document.querySelector("#header"),
         headerStaticHeightCopy = document.createElement("div");
 
     header.parentElement.insertBefore(headerStaticHeightCopy, header);
@@ -10,27 +10,37 @@ window.addEventListener("load", () => {
         emailBtn = document.querySelector("#email-btn"),
         emailCopyNotification = document.querySelector("#email-copy-notification");
 
-    var contactBorderTimeout = null;
+    var contactBorderTimeout = null, emailHideTimeout = null;
 
     contactBtn.addEventListener("click", () => {
         clearTimeout(contactBorderTimeout);
+        clearTimeout(emailHideTimeout);
 
         if (email.classList.contains("active")) {
             contactBtn.classList.remove("active");
             email.classList.remove("active");
+            emailBtn.setAttribute("tabindex", "-1");
+
             contactBorderTimeout = setTimeout(() => contact.classList.add("round-border-right"), 400);
+            emailHideTimeout = setTimeout(() => email.classList.add("hidden"), 500);
         }
         else {
             contactBtn.classList.add("active");
-            email.classList.add("active");
+            email.classList.remove("hidden");
             contact.classList.remove("round-border-right");
+            emailBtn.setAttribute("tabindex", "0");
+
+            setTimeout(() => email.classList.add("active"), 10);
         }
     });
 
-    document.body.addEventListener("touchend", () => emailCopyNotification.classList.add("touch"));
+    document.body.addEventListener("touchend", () => emailCopyNotification.classList.add("active-touch"));
+    emailBtn.addEventListener("focus", () => emailCopyNotification.classList.add("active-tab"));
+    emailBtn.addEventListener("blur", () => emailCopyNotification.classList.remove("active-tab"));
 
     var emailCopyNotificationTimeout = null;
 
+    emailCopyNotification.addEventListener("click", () => emailBtn.click());
     emailBtn.addEventListener("click", async () => {
         await navigator.clipboard.writeText(emailBtn.getAttribute("data-email"));
 
@@ -44,7 +54,6 @@ window.addEventListener("load", () => {
             emailCopyNotification.textContent = "Click to copy email adress!";
         }, 2000);
     });
-    emailCopyNotification.addEventListener("click", () => emailBtn.click());
 
     const headerNavToggle = document.querySelector("#nav-toggle"),
         headerNavToggleIcons = headerNavToggle.querySelectorAll(".fas");
@@ -83,6 +92,7 @@ window.addEventListener("load", () => {
                 email.classList.remove("active");
                 contact.classList.add("round-border-right");
             }
+            emailBtn.setAttribute("tabindex", "0");
         }
         else if (header.classList.contains("nav-active")) {
             header.classList.remove("nav-active");
@@ -109,6 +119,19 @@ window.addEventListener("load", () => {
         }
     }
 
+    window.addEventListener("scroll", headerScroll);
+    var prevScrollY = window.scrollY;
+
+    function headerScroll() {
+        if (window.scrollY > prevScrollY && window.scrollY >= document.querySelector("section").getBoundingClientRect().top)
+            header.classList.add("hidden");
+        else
+            header.classList.remove("hidden");
+
+        prevScrollY = window.scrollY;
+    }
+
     headerResizeInstant();
     headerResize();
+    headerScroll();
 });
