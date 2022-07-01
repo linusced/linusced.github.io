@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
+.projects-section.end {
+    margin-bottom: 5rem;
+}
+
 .projects-section-title {
     flex-basis: 100%;
     padding: 1.5rem 2rem;

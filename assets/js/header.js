@@ -120,13 +120,23 @@ window.addEventListener("load", () => {
     }
 
     window.addEventListener("scroll", headerScroll);
-    var prevScrollY = window.scrollY;
+    var prevScrollY = window.scrollY, prevScrollUp = false;
 
     function headerScroll() {
-        if (window.scrollY > prevScrollY && window.scrollY >= document.querySelector("section").getBoundingClientRect().top)
-            header.classList.add("hidden");
-        else
+        if (window.scrollY >= document.querySelector("section").getBoundingClientRect().top) {
+            if (window.scrollY < prevScrollY && (window.scrollY < prevScrollY - 40 || prevScrollUp)) {
+                header.classList.remove("hidden");
+                prevScrollUp = true;
+            }
+            else {
+                header.classList.add("hidden");
+                prevScrollUp = false;
+            }
+        }
+        else {
             header.classList.remove("hidden");
+            prevScrollUp = false;
+        }
 
         prevScrollY = window.scrollY;
     }
