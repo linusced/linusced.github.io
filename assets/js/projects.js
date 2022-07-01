@@ -55,10 +55,6 @@ window.addEventListener("load", () => {
         element = projectImages[i].querySelector("img");
         element.setAttribute("data-index", 0);
         element.addEventListener("load", e => e.target.classList.remove("fade"));
-
-        element = projectImages[i].querySelector("iframe");
-        if (element)
-            element.addEventListener("load", e => e.target.parentElement.querySelector("img").classList.remove("fade"));
     }
 
     function prevImage(e) {
@@ -66,13 +62,13 @@ window.addEventListener("load", () => {
         if (!projectIndex) projectIndex = e.target.parentElement.getAttribute("data-project-index");
         projectIndex = parseInt(projectIndex);
 
-        const img = projectImages[projectIndex].querySelector("img"), iframe = projectImages[projectIndex].querySelector("iframe"),
+        const img = projectImages[projectIndex].querySelector("img"),
             imgSources = img.getAttribute("data-sources").split(" ");
         let newIndex = parseInt(img.getAttribute("data-index")) - 1;
         if (newIndex < 0)
             newIndex = imgSources.length - 1;
 
-        setImage(img, iframe, imgSources, newIndex);
+        setImage(img, imgSources, newIndex);
     }
 
     function nextImage(e) {
@@ -80,14 +76,14 @@ window.addEventListener("load", () => {
         if (!projectIndex) projectIndex = e.target.parentElement.getAttribute("data-project-index");
         projectIndex = parseInt(projectIndex);
 
-        const img = projectImages[projectIndex].querySelector("img"), iframe = projectImages[projectIndex].querySelector("iframe"),
+        const img = projectImages[projectIndex].querySelector("img"),
             imgSources = img.getAttribute("data-sources").split(" "),
             newIndex = (parseInt(img.getAttribute("data-index")) + 1) % imgSources.length;
 
-        setImage(img, iframe, imgSources, newIndex);
+        setImage(img, imgSources, newIndex);
     }
 
-    function setImage(img, iframe, imgSources, newIndex) {
+    function setImage(img, imgSources, newIndex) {
         img.setAttribute("data-index", newIndex);
 
         var timeout = parseInt(img.getAttribute("data-timeout"));
@@ -96,14 +92,8 @@ window.addEventListener("load", () => {
         img.classList.add("fade");
 
         timeout = setTimeout(() => {
-            if (imgSources[newIndex].substring(0, 30) == "https://www.youtube.com/embed/") {
-                img.classList.add("hidden");
-                iframe.src = imgSources[newIndex];
-            }
-            else {
-                img.classList.remove("hidden");
-                img.src = imgSources[newIndex];
-            }
+            img.classList.remove("hidden");
+            img.src = imgSources[newIndex];
         }, 100);
 
         img.setAttribute("data-timeout", timeout);

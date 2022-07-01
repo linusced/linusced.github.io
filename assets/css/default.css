@@ -44,6 +44,10 @@ body {
     display: none !important;
 }
 
+.visibility-hidden {
+    visibility: hidden !important;
+}
+
 .overflow-hidden {
     overflow: hidden;
 }
@@ -84,6 +88,8 @@ body {
 .text-color,
 h1,
 h2,
+h3,
+h4,
 p {
     color: var(--text-color);
 }
@@ -96,6 +102,16 @@ h1 {
 h2,
 .default-btn {
     font-size: 1.6rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 4rem;
     font-weight: bold;
 }
 
@@ -145,4 +161,8 @@ button {
 
 .z-1 {
     z-index: 1;
+}
+
+.block {
+    display: block;
 }

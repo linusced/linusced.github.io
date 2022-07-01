@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./assets/css/images.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/projects.css">
+    <link rel="stylesheet" href="./assets/css/intro.css">
 
     <script src="./assets/js/default.js"></script>
     <script src="./assets/js/header.js"></script>
@@ -27,6 +28,21 @@
 
 <body>
     <div class="page-bg-image" style="background-image: url(./assets/images/background-images/earthrise-planet.jpg);">
+    </div>
+    <div class="page-intro">
+        <h1 class="container row above margin-bottom-20">
+            <span class="visibility-hidden margin-right">Programming & Web</span>
+            <span class="js-scroll-effect" data-scroll-multiplier-y="1.7">Projects</span>
+        </h1>
+        <h4 class="container row margin-top-20">
+            <span class="js-scroll-effect margin-right" data-scroll-multiplier-y="-1.5">Linus</span>
+            <span class="js-scroll-effect" data-scroll-multiplier-y="1.5"
+                data-scroll-multiplier-x="1.5">Cedergren</span>
+        </h4>
+        <h1 class="container row margin-top-80">
+            <span class="js-scroll-effect margin-right" data-scroll-multiplier-y="-0.7">Programming & Web</span>
+            <span class="visibility-hidden">Projects</span>
+        </h1>
     </div>
     <div class="page-bg-image js-scroll-effect" data-scroll-multiplier-x="0.1" id="bg-moon-image"
         style="background-image: url(./assets/images/background-images/earthrise-moon.png);"></div>
@@ -56,6 +72,7 @@
                 </span>
             </nav>
         </header>
+        <div class="container height-100vh"></div>
         <!--  C++ projects -->
         <section class="projects-section round-border-right">
             <h1 class="projects-section-title invert-colors">C++ Projects</h1>
@@ -86,8 +103,9 @@
                     <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/audio_visualizer/" target="_blank" class="default-btn"
                             title="Audio Visualizer Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
-                        <a href="#" target="_blank" class="default-btn"
-                            title="Audio Visualizer Download (MacOS)">Download (MacOS)</a>
+                        <!-- <a href="https://youtu.be/jSLihF28EPg" target="_blank" class="default-btn"
+                            title="Audio Synthesizer Preview Video"><i class="fab fa-youtube text-icon"></i>Watch
+                            Preview Video</a> -->
                     </div>
                 </div>
             </div>
@@ -119,21 +137,17 @@
                     <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/poker_ai/" target="_blank" class="default-btn"
                             title="Poker AI Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
-                        <a href="#" target="_blank" class="default-btn" title="Poker AI Download (MacOS)">Download
-                            (MacOS)</a>
+                        <!-- <a href="https://youtu.be/jSLihF28EPg" target="_blank" class="default-btn"
+                            title="Audio Synthesizer Preview Video"><i class="fab fa-youtube text-icon"></i>Watch
+                            Preview Video</a> -->
                     </div>
                 </div>
             </div>
             <!-- Audio Synthesizer -->
             <div class="project">
                 <div class="project-images invert-colors js-project-images">
-                    <div class="project-image-iframe-container">
-                        <img src="./assets/images/project-images/audio_synthesizer_1.jpg" alt="Audio Synthesizer"
-                            data-sources="./assets/images/project-images/audio_synthesizer_1.jpg https://www.youtube.com/embed/jSLihF28EPg ./assets/images/project-images/audio_synthesizer_2.jpg ./assets/images/project-images/audio_synthesizer_3.jpg ./assets/images/project-images/audio_synthesizer_4.jpg ./assets/images/project-images/audio_synthesizer_5.jpg">
-                        <iframe src="#" frameborder="0" title="YouTube video player"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen=""></iframe>
-                    </div>
+                    <img src="./assets/images/project-images/audio_synthesizer_1.jpg" alt="Audio Synthesizer"
+                        data-sources="./assets/images/project-images/audio_synthesizer_1.jpg ./assets/images/project-images/audio_synthesizer_2.jpg ./assets/images/project-images/audio_synthesizer_3.jpg ./assets/images/project-images/audio_synthesizer_4.jpg ./assets/images/project-images/audio_synthesizer_5.jpg">
                     <div class="project-images-control">
                         <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
                         <h1>Audio Synthesizer</h1>
@@ -147,10 +161,9 @@
                         <h2>Tags:</h2>
                         <p>C++, OpenGL, OpenAL, RtMidi, FFTW, TinyExpr</p>
                         <h2>Description:</h2>
-                        <p>A simple program for audio synthesis. You can create waveforms by using up to 51 harmonics
-                            and
-                            you can modify the ADSR envelope for your sound. You can play your sound using the computer
-                            keyboard or an external MIDI device.</p>
+                        <p>A simple program for audio synthesis using additive synthesis with a maximum 51 harmonics
+                            (because thats how many could fit inside the GUI). There is also an ADSR envelope and
+                            presets for the audio waveform and ADSR envelope can be saved/loaded.</p>
                         <p>It uses OpenGL for graphics, OpenAL for audio, FFTW for frequency analysis, RtMidi for MIDI
                             support and TinyExpr for simple math operations for the user input of waveform harmonics
                             ampltude and phase.</p>
@@ -158,8 +171,9 @@
                     <div class="project-buttons invert-colors">
                         <a href="https://github.com/linusced/audio_synthesizer/" target="_blank" class="default-btn"
                             title="Audio Synthesizer Source Code"><i class="fab fa-github text-icon"></i>Source Code</a>
-                        <a href="#" target="_blank" class="default-btn"
-                            title="Audio Synthesizer Download (MacOS)">Download (MacOS)</a>
+                        <a href="https://youtu.be/jSLihF28EPg" target="_blank" class="default-btn"
+                            title="Audio Synthesizer Preview Video"><i class="fab fa-youtube text-icon"></i>Watch
+                            Preview Video</a>
                     </div>
                 </div>
             </div>
@@ -193,8 +207,8 @@
                     </div>
                     <div class="project-buttons invert-colors">
                         <a href="https://chrome.google.com/webstore/detail/audio-analyser-extension/jijcfbjaabelgalioonccjkekpegoegb?hl=sv&authuser=1"
-                            target="_blank" class="default-btn" title="Audio Analyser Chrome Extension">Go To
-                            Chrome Extension</a>
+                            target="_blank" class="default-btn" title="Audio Analyser Chrome Extension"><i
+                                class="fab fa-chrome text-icon"></i>View Extension</a>
                     </div>
                 </div>
             </div>
