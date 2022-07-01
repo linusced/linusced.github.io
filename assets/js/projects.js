@@ -52,7 +52,13 @@ window.addEventListener("load", () => {
         element.setAttribute("data-project-index", i);
         element.addEventListener("click", nextImage);
 
-        projectImages[i].querySelector("img").setAttribute("data-index", 0);
+        element = projectImages[i].querySelector("img");
+        element.setAttribute("data-index", 0);
+        element.addEventListener("load", e => e.target.classList.remove("fade"));
+
+        element = projectImages[i].querySelector("iframe");
+        if (element)
+            element.addEventListener("load", e => e.target.parentElement.querySelector("img").classList.remove("fade"));
     }
 
     function prevImage(e) {
@@ -91,8 +97,6 @@ window.addEventListener("load", () => {
 
         timeout = setTimeout(() => {
             if (imgSources[newIndex].substring(0, 30) == "https://www.youtube.com/embed/") {
-                iframe.width = img.getBoundingClientRect().width;
-                iframe.height = img.getBoundingClientRect().height;
                 img.classList.add("hidden");
                 iframe.src = imgSources[newIndex];
             }
@@ -100,7 +104,6 @@ window.addEventListener("load", () => {
                 img.classList.remove("hidden");
                 img.src = imgSources[newIndex];
             }
-            img.classList.remove("fade");
         }, 100);
 
         img.setAttribute("data-timeout", timeout);

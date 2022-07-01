@@ -30,7 +30,6 @@
     </div>
     <div class="page-bg-image js-scroll-effect" data-scroll-multiplier-x="0.1" id="bg-moon-image"
         style="background-image: url(./assets/images/background-images/earthrise-moon.png);"></div>
-
     <div class="container z-1 width-100vw overflow-hidden">
         <header class="container row space-between" id="header">
             <button class="default-btn bg-color hidden" id="nav-toggle" title="Toggle navigation">
@@ -42,7 +41,7 @@
                     <a href="https://github.com/linusced/" target="_blank" class="default-btn" title="GitHub"><i
                             class="fab fa-github text-icon"></i>GitHub</a>
                 </span>
-                <span class="flex">
+                <span class="flex" id="contact-email-container">
                     <span class="flex bg-color invert-colors round-border-right" id="contact">
                         <button class="default-btn" id="contact-btn" title="Contact">Contact</button>
                     </span>
@@ -57,9 +56,8 @@
                 </span>
             </nav>
         </header>
-
         <!--  C++ projects -->
-        <section class="projects-section round-border-right" id="cpp-projects">
+        <section class="projects-section round-border-right">
             <h1 class="projects-section-title invert-colors">C++ Projects</h1>
             <!-- Audio Visualizer -->
             <div class="project">
@@ -129,11 +127,13 @@
             <!-- Audio Synthesizer -->
             <div class="project">
                 <div class="project-images invert-colors js-project-images">
-                    <img src="./assets/images/project-images/audio_synthesizer_1.jpg" alt="Audio Synthesizer"
-                        data-sources="./assets/images/project-images/audio_synthesizer_1.jpg https://www.youtube.com/embed/jSLihF28EPg ./assets/images/project-images/audio_synthesizer_2.jpg ./assets/images/project-images/audio_synthesizer_3.jpg ./assets/images/project-images/audio_synthesizer_4.jpg ./assets/images/project-images/audio_synthesizer_5.jpg">
-                    <iframe src="#" frameborder="0" title="YouTube video player"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen=""></iframe>
+                    <div class="project-image-iframe-container">
+                        <img src="./assets/images/project-images/audio_synthesizer_1.jpg" alt="Audio Synthesizer"
+                            data-sources="./assets/images/project-images/audio_synthesizer_1.jpg https://www.youtube.com/embed/jSLihF28EPg ./assets/images/project-images/audio_synthesizer_2.jpg ./assets/images/project-images/audio_synthesizer_3.jpg ./assets/images/project-images/audio_synthesizer_4.jpg ./assets/images/project-images/audio_synthesizer_5.jpg">
+                        <iframe src="#" frameborder="0" title="YouTube video player"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen=""></iframe>
+                    </div>
                     <div class="project-images-control">
                         <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
                         <h1>Audio Synthesizer</h1>
@@ -165,7 +165,7 @@
             </div>
         </section>
         <!-- Front end web projects -->
-        <section class="container projects-section round-border-right" id="web-projects">
+        <section class="container projects-section round-border-right">
             <h1 class="projects-section-title invert-colors">Front End Web Projects</h1>
             <!-- Audio Analyser -->
             <div class="project">
@@ -261,13 +261,13 @@
             </div>
         </section>
         <!-- Professional websites -->
-        <section class="container projects-section round-border-right" id="professional-websites">
+        <section class="container projects-section round-border-right">
             <h1 class="projects-section-title invert-colors">Professional Websites</h1>
             <!-- Vingården -->
             <div class="project">
                 <div class="project-images invert-colors js-project-images">
                     <img src="./assets/images/project-images/vingarden_1.jpg" alt="Vingården"
-                        data-sources="./assets/images/project-images/vingarden_1.jpg ./assets/images/project-images/vingarden_2.jpg ./assets/images/project-images/vingarden_3.jpg ./assets/images/project-images/vingarden_4.jpg ./assets/images/project-images/vingarden_5.jpg">
+                        data-sources="./assets/images/project-images/vingarden_1.jpg ./assets/images/project-images/vingarden_2.jpg ./assets/images/project-images/vingarden_3.jpg ./assets/images/project-images/vingarden_4.jpg ./assets/images/project-images/vingarden_5.jpg ./assets/images/project-images/vingarden_6.png">
                     <div class="project-images-control">
                         <button class="default-btn js-project-images-prev"><i class="fas fa-caret-left"></i></button>
                         <h1>Vingården</h1>

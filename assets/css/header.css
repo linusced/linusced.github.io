@@ -4,6 +4,7 @@
     top: 0;
     left: 0;
     padding: 1rem 1rem 2rem 1rem;
+    z-index: 2;
 }
 
 #main-nav-btns,
@@ -57,6 +58,16 @@
     #header.hidden {
         display: flex !important;
         transform: translateX(-110%);
+    }
+
+    #main-nav-btns {
+        height: 3rem;
+    }
+
+    #contact-email-container {
+        height: 6rem;
+        padding-bottom: 3rem;
+        overflow: hidden;
     }
 }
 
@@ -194,5 +205,9 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    #navigation .default-btn {
+        justify-content: flex-start;
     }
 }
