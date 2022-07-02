@@ -1,80 +1,101 @@
 window.addEventListener("load", () => {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)"),
-        prevFilter = sessionStorage.getItem("project-filter"),
-        projectFilterElement = document.querySelector("#project-filter"),
-        headerElement = document.querySelector("#header"),
-        headerContainer = document.querySelector("#header-container");
+    const projectContentToggle = document.querySelectorAll(".js-project-content-toggle"),
+        projectContent = document.querySelectorAll(".js-project-content");
 
-    var projectFilterElementFixed = null;
-    const projectFilterButtons = document.querySelectorAll(".js-project-filter-button");
-    var projectFilterFixedButtons = null;
-
-    projectFilterButtons.forEach(btn => {
-        btn.addEventListener("click", () => projectFilterChange(btn, true))
-
-        if (btn.getAttribute("data-project-filter") === prevFilter)
-            projectFilterChange(btn, false);
-    });
-
-    scrollCallbacks.push(projectFilterScroll);
-
-    function projectFilterChange(activeBtn, scroll) {
-        projectFilterButtons.forEach(btn => {
-            const dataProjectFilter = btn.getAttribute("data-project-filter");
-            if (dataProjectFilter != activeBtn.getAttribute("data-project-filter")) {
-                btn.classList.remove("active");
-                document.querySelectorAll(`.${dataProjectFilter}`).forEach(e => e.classList.add("hidden-absolute"));
-            }
-            else {
-                btn.classList.add("active");
-                document.querySelectorAll(`.${dataProjectFilter}`).forEach(e => e.classList.remove("hidden-absolute"));
-            }
-        });
-
-        if (projectFilterFixedButtons)
-            projectFilterFixedButtons.forEach(btn => {
-                const dataProjectFilter = btn.getAttribute("data-project-filter");
-                if (dataProjectFilter != activeBtn.getAttribute("data-project-filter")) {
-                    btn.classList.remove("active");
-                    document.querySelectorAll(`.${dataProjectFilter}`).forEach(e => e.classList.add("hidden-absolute"));
-                }
-                else {
-                    btn.classList.add("active");
-                    document.querySelectorAll(`.${dataProjectFilter}`).forEach(e => e.classList.remove("hidden-absolute"));
-                }
-            });
-
-        if (scroll)
-            window.scrollTo({ top: activeBtn.getBoundingClientRect().y + window.scrollY, behavior: reducedMotion.matches ? "auto" : "smooth" });
-
-        sessionStorage.setItem("project-filter", activeBtn.getAttribute("data-project-filter"));
+    for (let i = 0; i < projectContentToggle.length; i++) {
+        projectContentToggle[i].setAttribute("data-project-index", i);
+        projectContentToggle[i].addEventListener("click", toggleContent);
     }
 
-    function projectFilterScroll() {
-        if (projectFilterElement.getBoundingClientRect().bottom < 0) {
-            if (!projectFilterElementFixed) {
-                projectFilterElementFixed = document.createElement("div");
-                document.body.appendChild(projectFilterElementFixed);
-                projectFilterElementFixed.innerHTML = projectFilterElement.innerHTML;
-                projectFilterElementFixed.className = projectFilterElement.className;
-                projectFilterElementFixed.id = "project-filter-fixed";
+    function toggleContent(e) {
+        let projectIndex = e.target.getAttribute("data-project-index");
+        if (!projectIndex) projectIndex = e.target.parentElement.getAttribute("data-project-index");
+        projectIndex = parseInt(projectIndex);
 
-                projectFilterFixedButtons = projectFilterElementFixed.querySelectorAll(".js-project-filter-button");
-                projectFilterFixedButtons.forEach(btn => btn.addEventListener("click", () => projectFilterChange(btn, false)));
-                projectFilterFixedButtons.forEach(btn => btn.addEventListener("mousedown", () => btn.style.outline = "none"));
-                document.body.addEventListener("mouseup", () => projectFilterFixedButtons.forEach(btn => {
-                    btn.style.outline = "";
-                    btn.blur();
-                }));
-            }
-            const headerBottom = headerContainer.getBoundingClientRect().bottom;
-            if (headerBottom > 0 && headerElement.getAttribute("data-mobile-status") != "1")
-                projectFilterElementFixed.style.top = headerBottom + "px";
+        projectContentToggle[projectIndex].classList.toggle("active");
+
+        var timeout = parseInt(projectContent[projectIndex].getAttribute("data-timeout"));
+        clearTimeout(timeout);
+
+        projectContent[projectIndex].style = "display:flex;height:auto;";
+        const height = projectContent[projectIndex].getBoundingClientRect().height;
+        projectContent[projectIndex].style = "";
+
+        if (projectContentToggle[projectIndex].classList.contains("active")) {
+            projectContent[projectIndex].classList.add("active");
+            setTimeout(() => projectContent[projectIndex].style.height = height + "px", 10);
+            timeout = setTimeout(() => {
+                projectContent[projectIndex].style.height = "auto";
+                projectContentToggle[projectIndex].innerHTML = projectContentToggle[projectIndex].innerHTML.replace("View", "Hide");
+            }, 510);
         }
-        else if (projectFilterElementFixed) {
-            document.body.removeChild(projectFilterElementFixed);
-            projectFilterElementFixed = null;
-            projectFilterFixedButtons = null;
+        else {
+            projectContent[projectIndex].style.height = height + "px";
+            setTimeout(() => projectContent[projectIndex].style.height = "", 10);
+            timeout = setTimeout(() => {
+                projectContent[projectIndex].classList.remove("active");
+                projectContentToggle[projectIndex].innerHTML = projectContentToggle[projectIndex].innerHTML.replace("Hide", "View");
+            }, 510);
         }
+
+        projectContent[projectIndex].setAttribute("data-timeout", timeout);
+    }
+
+    const projectImages = document.querySelectorAll(".js-project-images");
+
+    for (let i = 0; i < projectImages.length; i++) {
+        let element = projectImages[i].querySelector(".js-project-images-prev");
+        element.setAttribute("data-project-index", i);
+        element.addEventListener("click", prevImage);
+
+        element = projectImages[i].querySelector(".js-project-images-next");
+        element.setAttribute("data-project-index", i);
+        element.addEventListener("click", nextImage);
+
+        element = projectImages[i].querySelector("img");
+        element.setAttribute("data-index", 0);
+        element.addEventListener("load", e => e.target.classList.remove("fade"));
+    }
+
+    function prevImage(e) {
+        let projectIndex = e.target.getAttribute("data-project-index");
+        if (!projectIndex) projectIndex = e.target.parentElement.getAttribute("data-project-index");
+        projectIndex = parseInt(projectIndex);
+
+        const img = projectImages[projectIndex].querySelector("img"),
+            imgSources = img.getAttribute("data-sources").split(" ");
+        let newIndex = parseInt(img.getAttribute("data-index")) - 1;
+        if (newIndex < 0)
+            newIndex = imgSources.length - 1;
+
+        setImage(img, imgSources, newIndex);
+    }
+
+    function nextImage(e) {
+        let projectIndex = e.target.getAttribute("data-project-index");
+        if (!projectIndex) projectIndex = e.target.parentElement.getAttribute("data-project-index");
+        projectIndex = parseInt(projectIndex);
+
+        const img = projectImages[projectIndex].querySelector("img"),
+            imgSources = img.getAttribute("data-sources").split(" "),
+            newIndex = (parseInt(img.getAttribute("data-index")) + 1) % imgSources.length;
+
+        setImage(img, imgSources, newIndex);
+    }
+
+    function setImage(img, imgSources, newIndex) {
+        img.setAttribute("data-index", newIndex);
+
+        var timeout = parseInt(img.getAttribute("data-timeout"));
+        clearTimeout(timeout);
+
+        img.classList.add("fade");
+
+        timeout = setTimeout(() => {
+            img.classList.remove("hidden");
+            img.src = imgSources[newIndex];
+        }, 100);
+
+        img.setAttribute("data-timeout", timeout);
     }
 });

@@ -1,161 +1,147 @@
 window.addEventListener("load", () => {
-    const headerElement = document.querySelector("#header"),
-        parentElement = headerElement.parentElement,
-        parentHeightElement = document.createElement("div"),
-        navElement = document.querySelector("#header-nav"),
-        contactElement = document.querySelector("#header-contact"),
-        titleELement = document.querySelector("#header-title"),
-        toggleElement = document.querySelector("#header-toggle");
+    const header = document.querySelector("#header"),
+        headerStaticHeightCopy = document.createElement("div");
 
-    parentHeightElement.className = "container full-width";
-    parentHeightElement.id = "header-height";
-    document.body.insertBefore(parentHeightElement, parentElement);
+    header.parentElement.insertBefore(headerStaticHeightCopy, header);
 
-    resizeCallbacks.push(resizeHeader);
-    resizeHeader();
+    const contact = document.querySelector("#contact"),
+        contactBtn = document.querySelector("#contact-btn"),
+        email = document.querySelector("#email"),
+        emailBtn = document.querySelector("#email-btn"),
+        emailCopyNotification = document.querySelector("#email-copy-notification");
 
-    function resizeHeader() {
-        navElement.classList.add("row");
-        navElement.classList.remove("column");
-        navElement.classList.remove("full-width");
-        navElement.classList.remove("full-width-children");
+    var contactBorderTimeout = null, emailHideTimeout = null;
 
-        navElement.classList.remove("hidden-absolute");
-        contactElement.classList.remove("hidden-absolute");
+    contactBtn.addEventListener("click", () => {
+        clearTimeout(contactBorderTimeout);
+        clearTimeout(emailHideTimeout);
 
-        if (window.innerWidth < 1000 || headerElement.getBoundingClientRect().width < navElement.getBoundingClientRect().width) {
-            navElement.classList.remove("row");
-            navElement.classList.add("column");
-            navElement.classList.add("full-width");
-            navElement.classList.add("full-width-children");
+        if (email.classList.contains("active")) {
+            contactBtn.classList.remove("active");
+            email.classList.remove("active");
+            emailBtn.setAttribute("tabindex", "-1");
 
-            contactElement.classList.add("full-width");
-            toggleElement.classList.remove("hidden");
-            titleELement.classList.add("full-width");
-
-            if (headerElement.getAttribute("data-mobile-status") != "1")
-                closeHeader(true);
+            contactBorderTimeout = setTimeout(() => contact.classList.add("round-border-right"), 400);
+            emailHideTimeout = setTimeout(() => email.classList.add("hidden"), 500);
         }
         else {
-            navElement.classList.add("row");
-            navElement.classList.remove("column");
-            navElement.classList.remove("full-width");
-            navElement.classList.remove("full-width-children");
+            contactBtn.classList.add("active");
+            email.classList.remove("hidden");
+            contact.classList.remove("round-border-right");
+            emailBtn.setAttribute("tabindex", "0");
 
-            contactElement.classList.remove("full-width");
-            toggleElement.classList.add("hidden");
-            titleELement.classList.remove("full-width");
-
-            headerElement.setAttribute("data-mobile-status", "-1");
-        }
-
-        const totalHeight = parentElement.getBoundingClientRect().height;
-        parentHeightElement.style.height = totalHeight + "px";
-    }
-
-    toggleElement.addEventListener("click", () => {
-        if (headerElement.style.height == "") {
-            if (headerElement.getAttribute("data-mobile-status") == "1")
-                closeHeader();
-            else
-                openHeader();
+            setTimeout(() => email.classList.add("active"), 10);
         }
     });
 
-    function closeHeader(noAnimation = false) {
-        headerElement.setAttribute("data-mobile-status", "0");
-        toggleElement.querySelector(".js-open").classList.add("visibility-hidden");
-        toggleElement.querySelector(".js-closed").classList.remove("visibility-hidden");
+    document.body.addEventListener("touchend", () => emailCopyNotification.classList.add("active-touch"));
+    emailBtn.addEventListener("focus", () => emailCopyNotification.classList.add("active-tab"));
+    emailBtn.addEventListener("blur", () => emailCopyNotification.classList.remove("active-tab"));
 
-        if (noAnimation) {
-            navElement.classList.add("hidden-absolute");
-            contactElement.classList.add("hidden-absolute");
+    var emailCopyNotificationTimeout = null;
+
+    emailCopyNotification.addEventListener("click", () => emailBtn.click());
+    emailBtn.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(emailBtn.getAttribute("data-email"));
+
+        clearTimeout(emailCopyNotificationTimeout);
+
+        emailCopyNotification.classList.add("active");
+        emailCopyNotification.innerHTML = "Email adress copied to clipboard!";
+
+        emailCopyNotificationTimeout = setTimeout(() => {
+            emailCopyNotification.classList.remove("active");
+            emailCopyNotification.innerHTML = "Click to copy email adress!<i class=\"fas fa-arrow-up padding-left\"></i>";
+        }, 2000);
+    });
+
+    const headerNavToggle = document.querySelector("#nav-toggle"),
+        headerNavToggleIcons = headerNavToggle.querySelectorAll(".fas");
+
+    headerNavToggle.addEventListener("click", () => {
+        if (header.classList.contains("nav-active")) {
+            header.classList.add("transition");
+            header.classList.remove("nav-active");
+            headerNavToggleIcons[0].classList.add("visible");
+            headerNavToggleIcons[1].classList.remove("visible");
+            document.body.style.overflow = "";
+
+            setTimeout(() => header.classList.remove("transition"), 500);
         }
         else {
-            const startHeight = headerElement.getBoundingClientRect().height,
-                endHeight = titleELement.getBoundingClientRect().height;
+            header.classList.add("nav-active");
+            headerNavToggleIcons[1].classList.add("visible");
+            headerNavToggleIcons[0].classList.remove("visible");
+            document.body.style.overflow = "hidden";
+        }
+    });
 
-            headerElement.style.height = startHeight + "px";
-            headerElement.style.transition = "height 0.3s linear";
-            headerElement.style.overflow = "hidden";
+    var mobileViewTransition = false;
+    var navHeight;
 
-            setTimeout(() => {
-                headerElement.style.height = endHeight + "px";
-            }, 5);
-            setTimeout(() => {
-                headerElement.style.height = headerElement.style.transition = headerElement.style.overflow = "";
-                navElement.classList.add("hidden-absolute");
-                contactElement.classList.add("hidden-absolute");
-            }, 310);
+    resizeCallbacks.push(headerResize);
+
+    function headerResize() {
+        var headerHeight = header.getBoundingClientRect().height;
+
+        if (navHeight != 0) {
+            headerHeight = navHeight + parseInt(window.getComputedStyle(header).paddingBottom);
+
+            if (email.classList.contains("active")) {
+                contactBtn.classList.remove("active");
+                email.classList.remove("active");
+                contact.classList.add("round-border-right");
+            }
+            emailBtn.setAttribute("tabindex", "0");
+        }
+        else if (header.classList.contains("nav-active")) {
+            header.classList.remove("nav-active");
+            headerNavToggleIcons[0].classList.add("visible");
+            headerNavToggleIcons[1].classList.remove("visible");
+            document.body.style.overflow = "";
+        }
+
+        headerStaticHeightCopy.style = "width: 100%; height: " + headerHeight + "px;";
+    }
+
+    instantResizeCallbacks.push(headerResizeInstant);
+
+    function headerResizeInstant() {
+        navHeight = headerNavToggle.getBoundingClientRect().height
+
+        if (navHeight != 0) {
+            mobileViewTransition = true;
+        }
+        else if (mobileViewTransition) {
+            mobileViewTransition = false;
+            email.style.transition = emailCopyNotification.style.transition = "none";
+            setTimeout(() => email.style.transition = emailCopyNotification.style.transition = "", 10);
         }
     }
 
-    function openHeader() {
-        headerElement.setAttribute("data-mobile-status", "1");
-        toggleElement.querySelector(".js-open").classList.remove("visibility-hidden");
-        toggleElement.querySelector(".js-closed").classList.add("visibility-hidden");
+    window.addEventListener("scroll", headerScroll);
+    var prevScrollY = window.scrollY, prevScrollUp = false;
 
-        navElement.classList.remove("hidden-absolute");
-        contactElement.classList.remove("hidden-absolute");
-
-        const startHeight = titleELement.getBoundingClientRect().height,
-            endHeight = headerElement.getBoundingClientRect().height;
-
-        headerElement.style.height = startHeight + "px";
-        headerElement.style.transition = "height 0.3s linear";
-        headerElement.style.overflow = "hidden";
-
-        parentElement.style.top = "0";
-
-        setTimeout(() => {
-            headerElement.style.height = endHeight + "px";
-        }, 5);
-        setTimeout(() => {
-            headerElement.style.height = headerElement.style.transition = headerElement.style.overflow = "";
-        }, 310);
-    }
-
-    var prevScrollY = window.scrollY, scrollUpStart = -1, scrollDownStart = -1;
-
-    scrollCallbacks.push(scrollHeader);
-
-    function scrollHeader() {
-        const height = parentElement.getBoundingClientRect().height;
-
-        if (headerElement.getAttribute("data-mobile-status") != "-1") {
-            scrollUpStart = scrollDownStart = -1;
-        }
-        else if (window.scrollY < prevScrollY) {
-            if (scrollUpStart == -1) {
-                let scrollUpStartOffset = 0;
-                if (scrollDownStart != -1 && window.scrollY - scrollDownStart < height)
-                    scrollUpStartOffset = height + (scrollDownStart - window.scrollY);
-
-                scrollUpStart = window.scrollY + scrollUpStartOffset;
+    function headerScroll() {
+        if (window.scrollY >= document.querySelector("section").getBoundingClientRect().top) {
+            if (window.scrollY < prevScrollY && (window.scrollY < prevScrollY - 40 || prevScrollUp)) {
+                header.classList.remove("hidden");
+                prevScrollUp = true;
             }
-            scrollDownStart = -1;
-
-            if (scrollUpStart - window.scrollY < height)
-                parentElement.style.top = -height + (scrollUpStart - window.scrollY) + "px";
-            else
-                parentElement.style.top = "0";
+            else {
+                header.classList.add("hidden");
+                prevScrollUp = false;
+            }
         }
         else {
-            if (scrollDownStart == -1) {
-                let scrollDownStartOffset = 0;
-                if (scrollUpStart != -1 && scrollUpStart - window.scrollY < height)
-                    scrollDownStartOffset = -height + (scrollUpStart - window.scrollY);
-
-                scrollDownStart = window.scrollY + scrollDownStartOffset;
-            }
-            scrollUpStart = -1;
-
-            if (window.scrollY - scrollDownStart < height)
-                parentElement.style.top = scrollDownStart - window.scrollY + "px";
-            else
-                parentElement.style.top = "-100%";
+            header.classList.remove("hidden");
+            prevScrollUp = false;
         }
 
         prevScrollY = window.scrollY;
     }
+
+    headerResizeInstant();
+    headerResize();
+    headerScroll();
 });

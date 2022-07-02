@@ -1,0 +1,213 @@
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 1rem 2rem 1rem;
+    z-index: 2;
+}
+
+#main-nav-btns,
+#contact {
+    z-index: 2;
+}
+
+#email {
+    position: relative;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    z-index: 1;
+}
+
+#email.active {
+    transform: translateX(0);
+}
+
+#email-copy-notification {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    background: var(--bg-color-green);
+    color: var(--text-color);
+    padding: 0.3rem 1rem;
+    white-space: nowrap;
+    z-index: -1;
+    transform: translate(-50%, -100%);
+    transition: transform 0.3s;
+}
+
+#email-copy-notification.active,
+#email:hover #email-copy-notification,
+#email-copy-notification.active-touch,
+#email-copy-notification.active-tab {
+    transform: translate(-50%, 0);
+}
+
+#email:not(.active) #email-copy-notification {
+    transform: translate(-50%, -100%);
+}
+
+@media (min-width: 651px) {
+    #header {
+        width: auto;
+        transform: translateX(0);
+        transition: transform 0.25s;
+        border-bottom-right-radius: 1rem;
+    }
+
+    #header.hidden {
+        display: flex !important;
+        transform: translateX(-110%);
+    }
+
+    #main-nav-btns {
+        height: 3rem;
+    }
+
+    #contact-email-container {
+        height: 6rem;
+        padding-bottom: 3rem;
+        overflow: hidden;
+    }
+}
+
+
+@media (min-width: 651px) and (max-width: 1200px) {
+    #header {
+        padding-left: 0;
+    }
+
+    #navigation {
+        flex-direction: column;
+    }
+
+    #main-nav-btns {
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    #contact {
+        border-top-right-radius: 0;
+    }
+
+    #main-nav-btns>.default-btn:first-child,
+    #contact>.default-btn {
+        padding-left: 3rem;
+    }
+}
+
+@media (max-width: 650px) {
+    #header {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: transparent;
+        transition: background 0.5s linear;
+    }
+
+    #header.hidden {
+        display: flex !important;
+    }
+
+    #header.transition {
+        width: 100vw;
+    }
+
+    #header.nav-active {
+        width: 100vw;
+        background: var(--bg-color);
+    }
+
+    #navigation {
+        height: 100vh;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s linear, visibility 0.5s linear;
+        display: none;
+    }
+
+    #header.transition #navigation {
+        display: flex;
+    }
+
+    #header.nav-active #navigation {
+        visibility: visible;
+        opacity: 1;
+        overflow-y: auto;
+        padding-bottom: 0;
+        display: flex;
+    }
+
+    #navigation,
+    #main-nav-btns {
+        flex-direction: column;
+    }
+
+    #main-nav-btns {
+        background: none;
+    }
+
+    #contact {
+        display: none;
+    }
+
+    #main-nav-btns,
+    #email>span {
+        border-radius: 0;
+    }
+
+    #main-nav-btns>.default-btn,
+    #email-btn,
+    #email-copy-notification {
+        text-align: left;
+        width: 100vw;
+        padding-left: 1rem;
+        padding-right: 0;
+    }
+
+    #email {
+        transform: translateX(0);
+        flex-direction: column;
+        display: flex !important;
+    }
+
+    #email-copy-notification {
+        transform: translate(0, 0) !important;
+        position: static;
+        border-radius: 0;
+    }
+
+    #nav-toggle {
+        position: relative;
+        display: block !important;
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+    }
+
+    #nav-toggle .fas {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s linear, visibility 0.5s linear;
+    }
+
+    #nav-toggle .fas.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #nav-toggle .fas:last-child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #navigation .default-btn {
+        justify-content: flex-start;
+    }
+}

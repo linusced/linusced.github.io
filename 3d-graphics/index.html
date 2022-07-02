@@ -10,92 +10,70 @@
     <link rel="stylesheet" href="../assets/fontawesome/css/solid.min.css">
     <link rel="stylesheet" href="../assets/fontawesome/css/brands.min.css">
 
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/containers.css">
-    <link rel="stylesheet" href="../assets/css/buttons.css">
-    <link rel="stylesheet" href="../assets/css/text.css">
+    <link rel="stylesheet" href="../assets/css/default.css">
+    <link rel="stylesheet" href="../assets/css/sizing.css">
+    <link rel="stylesheet" href="../assets/css/flex.css">
     <link rel="stylesheet" href="../assets/css/images.css">
-    <link rel="stylesheet" href="../assets/css/unique.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/intro.css">
 
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/default.js"></script>
     <script src="../assets/js/header.js"></script>
-    <script src="../assets/js/color-gradients.js"></script>
+    <script src="../assets/js/scroll.js"></script>
 
-    <title>linusced</title>
+    <title>Linusced - 3D Graphics</title>
 </head>
 
-<body>
-    <div class="_3d-render-background fixed-top-left"></div>
-    <div id="header-container" class="container full-width fixed-top-left positive-z-2">
-        <div id="header" class="container row-wrap space-content full-width padding-horizontal-2 scheme-bg-color">
-            <div id="header-title" class="container row space-content full-width">
-                <a href="../" class="margin-vertical-1 scheme-text-color">
-                    <h3 class="static-font-size">linusced</h3>
-                </a>
-                <button id="header-toggle" class="icon-button scheme-text-color hidden">
-                    <i class="fas fa-bars js-closed"></i>
-                    <i class="fas fa-times visibility-hidden js-open"></i>
-                </button>
-            </div>
-            <div id="header-nav" class="container row center-content positive-z">
-                <a href="../" class="default-button margin-horizontal-1 gradient-container js-gradient-container">
-                    <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text scheme-default-colors">Home</div>
-                </a>
-                <a href="./" class="default-button margin-horizontal-1 gradient-container js-gradient-container active">
-                    <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text scheme-default-colors">3D Graphics</div>
-                </a>
-                <a href="http://github.com/linusced/" target="_blank"
-                    class="default-button margin-horizontal-1 gradient-container js-gradient-container">
-                    <span class="gradient negative-z js-gradient"></span>
-                    <div class="button-text icon scheme-default-colors"><i class="fab fa-github"></i><span>GitHub</span>
-                    </div>
-                </a>
-            </div>
-            <div id="header-contact"
-                class="container center-content margin-vertical-1 gradient-container js-gradient-container">
-                <span class="gradient js-gradient"></span>
-                <span class="semi-transparent-overlay"></span>
-                <div
-                    class="container row-wrap center-content padding-horizontal-1 border-width-margin positive-z scheme-text-color max-width-vw">
-                    <p class="padding-right padding-top padding-bottom">Contact:</p>
-                    <a href="mailto:linuscedergren@gmail.com"
-                        class="padding-top padding-bottom margin-right text-link">linuscedergren@gmail.com</a>
-                    <button class="alternate-button js-copy" data-text="linuscedergren@gmail.com">
-                        <div class="button-text scheme-default-colors-opaque">Copy</div>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="container full-width border-height gradient-container js-gradient-container">
-            <span class="gradient js-gradient"></span>
-        </div>
+<body style="overflow: hidden;">
+    <div class="page-bg-image" style="background-image: url(../assets/images/background-images/earthrise-planet.jpg);">
     </div>
-    <div class="container center-content padding-vertical-1 margin-vertical-3 full-width positive-z">
-        <h1 class="static-color-blue-2">3D Models:</h1>
-        <div class="container row-wrap center-content margin-top">
-            <img src="../assets/images/3d-models/astronaut-eva-suit-1.jpg" class="default-image-size">
-            <img src="../assets/images/3d-models/astronaut-eva-suit-2.jpg" class="default-image-size">
-            <img src="../assets/images/3d-models/astronaut-eva-suit-3.jpg" class="default-image-size">
-            <img src="../assets/images/3d-models/spacecraft-lander-1.jpg" class="default-image-size">
-            <img src="../assets/images/3d-models/spacecraft-lander-2.jpg" class="default-image-size">
-            <img src="../assets/images/3d-models/spacecraft-lander-3.jpg" class="default-image-size">
-            <img src="../assets/images/3d-models/spacecraft-lander-4.jpg" class="default-image-size">
-        </div>
+    <div class="page-intro">
+        <h4 class="container row">
+            <span class="margin-right">Linus</span>
+            <span class="js-scroll-effect" data-scroll-multiplier-y="1.5"
+                data-scroll-multiplier-x="1.5">Cedergren</span>
+        </h4>
+        <h1 class="container row">
+            <span class="margin-right light-blue js-scroll-effect" data-scroll-multiplier-x="-1.5"
+                data-scroll-multiplier-y="1.0">3D</span>
+            <span class="dark-blue js-scroll-effect" data-scroll-multiplier-x="1.0"
+                data-scroll-multiplier-y="2.0">Graphics</span>
+        </h1>
     </div>
-    <div class="container center-content padding-vertical-1 padding-horizontal-3 margin-vertical-3 positive-z">
-        <h1 class="static-color-blue-2">3D Animations:</h1>
-        <div class="container center-content margin-top">
-            <iframe src="https://www.youtube.com/embed/QfqgaiqWGdc" frameborder="0" title="YouTube video player"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                class="default-image-size margin-vertical-1"></iframe>
-            <iframe src="https://www.youtube.com/embed/OGsGFqtmyAg" frameborder="0" title="YouTube video player"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                class="default-image-size margin-vertical-1"></iframe>
-        </div>
+    <div class="page-bg-image js-scroll-effect" data-scroll-multiplier-x="0.1" id="bg-moon-image"
+        style="background-image: url(../assets/images/background-images/earthrise-moon.png);"></div>
+
+    <div class="container z-1 width-100vw overflow-hidden">
+        <header class="container row space-between" id="header">
+            <button class="default-btn bg-color hidden" id="nav-toggle" title="Toggle navigation">
+                <i class="fas fa-bars visible"></i><i class="fas fa-times"></i></button>
+            <nav class="container row align-start" id="navigation">
+                <span class="flex bg-color round-border-left" id="main-nav-btns">
+                    <a href="../" class="default-btn" title="Homepage">Home</a>
+                    <a href="./" class="default-btn active" title="3D Graphics">3D Graphics</a>
+                    <a href="https://github.com/linusced/" target="_blank" class="default-btn" title="GitHub"><i
+                            class="fab fa-github text-icon"></i>GitHub</a>
+                </span>
+                <span class="flex" id="contact-email-container">
+                    <span class="flex bg-color invert-colors round-border-right" id="contact">
+                        <button class="default-btn" id="contact-btn" title="Contact">Contact</button>
+                    </span>
+                    <span class="flex hidden" id="email">
+                        <span class="flex bg-color invert-colors round-border-right">
+                            <button class="default-btn" id="email-btn" title="Copy email"
+                                data-email="linuscedergren@gmail.com">linuscedergren@gmail.com</button>
+                        </span>
+                        <h3 id="email-copy-notification" class="round-border-bottom">Click to copy email adress!<i
+                                class="fas fa-arrow-up padding-left"></i></h3>
+                    </span>
+                </span>
+            </nav>
+        </header>
+        <div class="container height-100vh"></div>
     </div>
+
+    <h4 style="position: absolute; bottom: 12rem; left: 50%; transform: translateX(-50%);">This page is not finished
+        yet!</h4>
 </body>
 
 </html>

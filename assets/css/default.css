@@ -1,0 +1,168 @@
+:root {
+    --text-color: #eee;
+    --bg-color: #000;
+    --text-color-blue: #60ddff;
+    --bg-color-blue: #178ddb;
+    --bg-color-semi-transparent: #fff5;
+    --bg-color-semi-transparent-image-overlay: #0008;
+    --bg-color-green: #0a0;
+}
+
+.invert-colors {
+    --text-color: #111;
+    --bg-color: #eee;
+    --text-color-blue: #3b7bfb;
+    --bg-color-blue: #60ddff;
+    --bg-color-semi-transparent: #0003;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+html {
+    height: 100%;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visibility-hidden {
+    visibility: hidden !important;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.round-border {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.round-border-left {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    overflow: hidden;
+}
+
+.round-border-right {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+}
+
+.round-border-top {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    overflow: hidden;
+}
+
+.round-border-bottom {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+}
+
+.bg-color {
+    background-color: var(--bg-color);
+}
+
+.text-color,
+h1,
+h2,
+h3,
+h4,
+p {
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+h2,
+.default-btn {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+}
+
+a,
+button {
+    border: none;
+    background: none;
+}
+
+.text-icon {
+    margin-right: 0.4rem;
+}
+
+.default-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    padding: .5rem 2rem;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.default-btn:focus {
+    outline-offset: -0.4rem;
+}
+
+.default-btn:hover,
+.default-btn:focus {
+    background: var(--bg-color-blue);
+}
+
+.default-btn.active {
+    color: var(--text-color-blue);
+}
+
+.default-btn.active:hover,
+.default-btn.active:focus {
+    background: var(--bg-color-semi-transparent);
+}
+
+.z-1 {
+    z-index: 1;
+}
+
+.block {
+    display: block;
+}
