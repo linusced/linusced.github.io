@@ -4,11 +4,7 @@
     width: 80%;
     max-width: 1300px;
     background: var(--bg-color-semi-transparent-image-overlay);
-    margin-top: 5rem;
     overflow: hidden;
-}
-
-.projects-section.end {
     margin-bottom: 5rem;
 }
 
