@@ -85,6 +85,10 @@ body {
     background-color: var(--bg-color);
 }
 
+.text-color-blue {
+    color: var(--text-color-blue);
+}
+
 .text-color,
 h1,
 h2,

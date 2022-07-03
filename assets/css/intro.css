@@ -24,14 +24,6 @@
     margin-top: 1rem;
 }
 
-.page-intro .dark-blue {
-    color: var(--bg-color-blue);
-}
-
-.page-intro .light-blue {
-    color: var(--text-color-blue);
-}
-
 @media (max-width: 1200px) {
     .page-intro {
         left: -6vw;

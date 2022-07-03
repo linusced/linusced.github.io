@@ -38,8 +38,8 @@
 
 #email-copy-notification.active,
 #email:hover #email-copy-notification,
-#email-copy-notification.active-touch,
-#email-copy-notification.active-tab {
+#email-copy-notification.active-tab,
+body.touch #email-copy-notification {
     transform: translate(-50%, 0);
 }
 

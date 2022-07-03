@@ -34,7 +34,6 @@ window.addEventListener("load", () => {
         }
     });
 
-    document.body.addEventListener("touchend", () => emailCopyNotification.classList.add("active-touch"));
     emailBtn.addEventListener("focus", () => emailCopyNotification.classList.add("active-tab"));
     emailBtn.addEventListener("blur", () => emailCopyNotification.classList.remove("active-tab"));
 

@@ -8,6 +8,7 @@ window.addEventListener("load", () => {
         btn.style.outline = "";
         btn.blur();
     }));
+    document.body.addEventListener("touchstart", () => document.body.classList.add("touch"));
 });
 
 window.addEventListener("resize", () => {
