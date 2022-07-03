@@ -11,6 +11,11 @@
     overflow: hidden;
 }
 
+.page-intro h4,
+.page-intro h1 {
+    text-shadow: 1px 0 0 var(--bg-color), -1px 0 0 var(--bg-color), 0 1px 0 var(--bg-color), 0 -1px 0 var(--bg-color), 4px 4px 4px var(--bg-color);
+}
+
 .page-intro h4 {
     margin-top: 12rem;
 }
@@ -25,10 +30,6 @@
 
 .page-intro .light-blue {
     color: var(--text-color-blue);
-}
-
-.page-intro span {
-    text-shadow: 0.3rem 0.3rem 0.3rem var(--bg-color);
 }
 
 @media (max-width: 1200px) {
